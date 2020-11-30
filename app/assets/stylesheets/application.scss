@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  padding-top: 60px;
+  height: 100%;
+}
+
+.wrapper{
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+  overflow: hidden;
+}

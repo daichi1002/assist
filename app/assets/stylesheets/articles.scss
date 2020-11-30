@@ -1,0 +1,27 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.title-contents {
+  background-image: image-url('top-page.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 35vh 20vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.article-title {
+  text-align: center;
+  margin: 5vh 0 ;
+}
+
+.image-title {
+  margin-left: 20vw;
+}
+
+.my-orange {color: #fecb81}

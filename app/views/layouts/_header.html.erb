@@ -1,0 +1,48 @@
+<header>
+  <div class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: linear-gradient(260deg, #00c4c4, #1275a0);">
+    <%= link_to image_tag('footer-logo.png', style: "width: 150px"), "/" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+<%# 管理者がログインしているとき%>
+    <%# if user_signed_in? && current_user.admin? %>
+    <%#div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item login-user">ようこそ、<%= current_user.first_name %> <%#/li>
+      <%#/ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><%= link_to '新規投稿', new_admin_article_path %><%#/li>
+        <%#li class="nav-item"><%= link_to '記事一覧', root_path %><%#/li>
+        <%#li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %><%#/li>
+        <%#li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><%#/li>
+      </ul>
+    </div>
+
+<%# ユーザーがログインしているとき %>
+    <%# elsif user_signed_in? %>
+    <%#div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item login-user">ようこそ、<%= current_user.last_name %> <%#/li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><%= link_to '記事一覧', root_path %><%#/li>
+        <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %><%#/li>
+        <%#li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><%#/li>
+      </ul>
+    </div>
+
+<%# ログインしていないとき%>
+    <%# else %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><%= link_to '記事一覧', "#" %></li>
+        <li class="nav-item"><%= link_to '新規登録', "#" %></li>
+        <li class="nav-item"><%= link_to 'ログイン', "#" %></li>
+      </ul>
+    </div>
+    <%# end %>
+  </nav>
+  </div>
+</header>
