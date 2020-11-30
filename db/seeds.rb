@@ -14,10 +14,7 @@ User.create!(
   email: 'admin@example.com',
   password: 'daichi1002',
   password_confirmation: 'daichi1002',
-  postal_code: '123-4567',
   state_id: 45,
-  city: '宮崎市',
-  address_number: '宮崎町1-1-1',
   phone_number: '09012345678',
   birth_day: '1994-10-02',
   admin: true
