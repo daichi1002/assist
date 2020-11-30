@@ -80,37 +80,10 @@
         <% end %>
         <div class="form-group">
           <div class='form-text-wrap'>
-            <label class="form-text" for="postal-code">郵便番号</label>
-            <span class="badge badge-danger">必須</span>
-          </div>
-          <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
             <label class="form-text" for="state">都道府県</label>
             <span class="badge badge-danger">必須</span>
           </div>
           <%= f.collection_select(:state_id, State.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"state"}) %>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text" for="city">市区町村</label>
-            <span class="badge badge-danger">必須</span>
-          </div>
-          <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）宮崎市"%>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text" for="addresses">番地</label>
-            <span class="badge badge-danger">必須</span>
-          </div>
-          <%= f.text_field :address_number, class:"input-default", id:"addresses", placeholder:"例）宮崎1-1-1"%>
-        </div>
-        <div class="form-group">
-          <div class='form-text-wrap'>
-            <label class="form-text" for="building">建物名</label>
-          </div>
-          <%= f.text_field :building_name, class:"input-default", id:"building", placeholder:"例）宮崎ビル101"%>
         </div>
         <div class="form-group">
           <div class='form-text-wrap'>
