@@ -7,7 +7,7 @@
           <h4 class='form-header-text'>会員情報入力</h4>
         </div>
 
-  <%#= render 'shared/error_messages', model: f.object %>
+  <%= render 'layouts/error_messages', model: f.object %>
         <div class="text-center">
           <%= link_to 'Facebookで登録', "#", class:"btn btn-outline-primary", method: :post%>
           <%= link_to 'Googleで登録', "#", class:"btn btn-outline-secondary", method: :post%>
