@@ -1,0 +1,41 @@
+<%= search_form_for @a, url: articles_search_path do |f| %>
+  <div class="search-wrap">
+    <div class="search-content">
+      <div class="search-label">
+        <%= f.label :type_id_eq, '■種類を選択', class: 'label' %>
+      </div>
+      <div class="search-radio-button">
+        <%= f.radio_button :type_id_eq, '', {checked: true} %>指定なし
+        <%= f.radio_button :type_id_eq, 1 %>補助金・助成金
+        <%= f.radio_button :type_id_eq, 2 %>制度融資
+      </div>
+    </div>
+    <div class="search-content">
+      <div class="search-label">
+        <%= f.label :area_id_eq, '■地域を選択', class: 'label' %>
+      </div>
+      <div class="search-form">
+        <%= f.collection_select(:area_id_eq, Area.all, :id, :name, {include_blank: "---"}, {class:"search-select-box"}) %>
+      </div>
+    </div>
+    <div class="search-content">
+      <div class="search-label">
+        <%= f.label :genre_id_eq, '■ジャンルを選択', class: 'label' %>
+      </div>
+      <div class="search-form">
+        <%= f.collection_select(:genre_id_eq, Genre.all, :id, :name, {include_blank: "---"}, {class:"search-select-box"}) %>
+      </div>
+    </div>
+    <div class="search-content">
+      <div class="search-label">
+        <%= f.label :title_or_infomation_cont, '■キーワード検索', class: 'label' %>
+      </div>
+      <div class="search-form">
+        <%= f.search_field :title_or_information_cont, placeholder: "キーワードから探す", class: 'form-control' %>
+      </div>
+    </div>
+    <div class="search-btn text-right">
+      <%= f.submit 'この条件で検索する', class:"btn btn-outline-success" %>
+    </div>
+  </div>
+<% end %>
