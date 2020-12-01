@@ -29,6 +29,14 @@ class Admin::ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    if @article.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
   private
 
   def if_not_admin
