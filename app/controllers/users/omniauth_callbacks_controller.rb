@@ -1,16 +1,15 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
   def facebook
     authorization
-   end
-  
-   def google_oauth2
+  end
+
+  def google_oauth2
     authorization
-   end
-  
-   private
-  
-   def authorization
+  end
+
+  private
+
+  def authorization
     sns_info = User.from_omniauth(request.env['omniauth.auth'])
     @user = sns_info[:user]
 
