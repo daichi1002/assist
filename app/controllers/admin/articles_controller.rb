@@ -15,6 +15,9 @@ class Admin::ArticlesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def if_not_admin
