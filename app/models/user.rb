@@ -28,4 +28,10 @@ class User < ApplicationRecord
     end
     { user: user, sns: sns }
   end
+
+  def self.guest
+    find_or_create_by!(first_name: 'ユーザー', last_name: 'ゲスト', first_name_kana: 'ユーザー', last_name_kana: 'ゲスト', email: 'guest@example.com', state_id: 1, phone_number: '09012345678', birth_day: '1994-10-02') do |user|
+      user.password = SecureRandom.hex(10)
+    end
+  end
 end

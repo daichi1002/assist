@@ -28,7 +28,7 @@
         </div>
         <div class='login-btn'>
           <%= f.submit "ログイン" , class:"login-red-btn" %>
-          <%= link_to 'ゲストログイン', "#", method: :post, class:"btn btn-outline-warning" %>
+          <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class:"btn btn-outline-warning" %>
           <div class="d-flex justify-content-between mt-4">
             <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, class:"btn btn-outline-primary", method: :post%>
             <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path,  class:"btn btn-outline-secondary", method: :post%>
