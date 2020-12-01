@@ -7,42 +7,43 @@
     </button>
 
 <%# 管理者がログインしているとき%>
-    <%# if user_signed_in? && current_user.admin? %>
-    <%#div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <% if user_signed_in? && current_user.admin? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item login-user">ようこそ、<%= current_user.first_name %> <%#/li>
-      <%#/ul>
+        <li class="nav-item login-user">ようこそ、<%= current_user.first_name %>さん！</li>
+      </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><%= link_to '新規投稿', new_admin_article_path %><%#/li>
-        <%#li class="nav-item"><%= link_to '記事一覧', root_path %><%#/li>
-        <%#li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %><%#/li>
-        <%#li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><%#/li>
+        <li class="nav-item"><%= link_to '新規投稿', new_admin_article_path %></li>
+        <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
+        <li class="nav-item"><%= link_to 'マイページ', "#" %></li>
+        <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
 
 <%# ユーザーがログインしているとき %>
-    <%# elsif user_signed_in? %>
-    <%#div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <% elsif user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item login-user">ようこそ、<%= current_user.last_name %> <%#/li>
+        <li class="nav-item login-user">ようこそ、<%= current_user.last_name %>さん！</li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><%= link_to '記事一覧', root_path %><%#/li>
-        <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %><%#/li>
-        <%#li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><%#/li>
+        <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
+        <li class="nav-item"><%= link_to 'マイページ', "#" %></li>
+        <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
 
 <%# ログインしていないとき%>
-    <%# else %>
+    <% else %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><%= link_to '記事一覧', "#" %></li>
-        <li class="nav-item"><%= link_to '新規登録', "#" %></li>
-        <li class="nav-item"><%= link_to 'ログイン', "#" %></li>
+        <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
+        <li class="nav-item"><%= link_to '新規登録', new_user_registration_path %></li>
+        <li class="nav-item"><%= link_to 'ログイン', new_user_session_path %></li>
+        <li class="nav-item"><%= link_to '簡易ログイン', users_guest_sign_in_path, method: :post %></li>
       </ul>
     </div>
-    <%# end %>
+    <% end %>
   </nav>
   </div>
 </header>

@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        first_name: "お名前（姓）"
+        last_name: 'お名前（名）'
+        first_name_kana: 'お名前カナ（セイ）'
+        last_name_kana: 'お名前カナ（メイ）'
+        state_id: '都道府県'
+        phone_number: '電話番号'
+        birth_day: '生年月日'
+      article:
+        image: '画像'
+        title: 'タイトル'
+        type_id: '種類'
+        genre_id: 'ジャンル'
+        area_id: 'エリア'
+        start_date: '取扱開始日'
+        end_date: '取扱終了日'
+        information: '詳細'
+        url: 'URL'
