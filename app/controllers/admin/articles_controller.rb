@@ -18,6 +18,17 @@ class Admin::ArticlesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @article.update(article_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def if_not_admin

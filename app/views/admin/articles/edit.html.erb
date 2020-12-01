@@ -1,0 +1,128 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-sm-2 col-sm-8 offset-sm-2">
+      <%= form_with model: @article, url:admin_article_path, local: true do |f| %>
+
+      <div class='article-form-wrap'>
+        <div class='article-form-header'>
+          <h4 class='article-form-header-text'>
+            <i class="fas fa-broom fa-lg my-orange"></i>記事編集
+          </h4>
+        </div>
+        <%= render 'layouts/error_messages', model: f.object %>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="image">イメージ画像</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.file_field :image, class:"image-input-name", id:"image" %>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="title">タイトル</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <div class='article-input-name-wrap'>
+            <%= f.text_field :title, class:"article-input-name", id:"title", placeholder:"" %>
+          </div>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="type">種類</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.collection_select(:type_id, Type.all, :id, :name, {include_blank: "---"}, {class:"article-select-box", id:"type"}) %>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="genre">ジャンル</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: "---"}, {class:"article-select-box", id:"genre"}) %>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="area">エリア</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.collection_select(:area_id, Area.all, :id, :name, {include_blank: "---"}, {class:"article-select-box", id:"area"}) %>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="maximum-price">上限金額</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.text_field :maximum_price, class:"article-input-name", id:"maximum-price", placeholder:"¥100,000,000", autofocus: true %>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="start-date">取扱開始日</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <div class='article-input-date-wrap'>
+            <%= raw sprintf(
+                        f.date_select(
+                          :start_date,
+                          class:'article-select-date',
+                          id:"start-date",
+                          use_month_numbers: true,
+                          prompt:'--',
+                          start_year: 2010,
+                          end_year: (Time.now.year + 5),
+                          date_separator: '%s'),
+                        "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+          </div>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="end-date">取扱終了日</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <div class='article-input-date-wrap'>
+            <%= raw sprintf(
+                        f.date_select(
+                          :end_date,
+                          class:'article-select-date',
+                          id:"end-date",
+                          use_month_numbers: true,
+                          prompt:'--',
+                          start_year: 2020,
+                          end_year: (Time.now.year + 5),
+                          date_separator: '%s'),
+                        "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+          </div>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="information">詳細</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.text_area :information, class:"article-input-default", id:"information", placeholder:"" %>
+        </div>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="url">URL</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.text_field :url, class:"article-input-name", id:"url", placeholder:""%>
+        </div>
+
+        <div class='article-btn'>
+          <%= f.submit "投稿" ,class:"article-red-btn" %>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
