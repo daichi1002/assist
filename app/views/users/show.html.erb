@@ -1,0 +1,21 @@
+<div class="container">
+  <h5 class="article-title"><i class="fas fa-tag fa-lg my-orange"></i><%= @user.last_name %>さんのお気に入り記事一覧</h5>
+    <div class="row">
+      <% @user.liked_articles.each do |article| %>
+        <div class="card-group col-md-6 col-lg-3">
+          <%= link_to article_path(article.id), class: "article-link" do%>
+          <span class="article-info"><%= article.genre.name %></span>
+          <span class="article-info" style="float: right;"><%= article.created_at.strftime('%Y/%m/%d') %></span>
+          <div class="card articles-chart">
+            <%= image_tag article.image, class:"card-img-top" if article.image.attached? %> 
+              <div class="card-body">
+                <h5 class="card-title"><%= article.title %></h4>
+                <p class="card-text"><%= article.information.truncate(30) %></p>
+                <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= article.likes.count %></span></p>
+              </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+</div>
