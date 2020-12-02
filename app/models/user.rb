@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :sns_credentials, dependent: :destroy
   has_many :article
   has_many :likes
-
+  has_many :liked_articles, through: :likes, source: :article
+  
   def liked_by?(article_id)
     likes.where(article_id: article_id).exists?
   end
