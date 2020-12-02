@@ -2,6 +2,8 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :state
   has_many :sns_credentials, dependent: :destroy
+  has_many :article
+  has_many :likes
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
