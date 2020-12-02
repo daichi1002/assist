@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :search_article, only: [:index, :search]
   def index
     @articles = Article.includes(:user).order('created_at DESC').limit(4)
+    @ranks = Article.find(Like.group(:article_id).order('count(article_id) DESC').limit(4).pluck(:article_id))
   end
 
   def show
