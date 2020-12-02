@@ -44,7 +44,7 @@
                 </tr>
               </tbody>
             </table>
-              <%#= render partial: "likes/like", locals: { article:@article } %>
+              <%= render "likes/like" %>
           </div>
           <div class="admin-oparation text-center">
           <%= link_to '編集', edit_admin_article_path, method: :get, class: "btn btn-outline-success w-25" %>
