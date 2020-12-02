@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
-  <% if current_user.liked_by?(article.id) %>
-    <%= link_to "#", method: :delete, remote: true do %>
-      <p class="like-button"><i class="fas fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%#= @article.likes.count %></span></p>
+  <% if current_user.liked_by?(@article.id) %>
+    <%= link_to destroy_like_path(@article), method: :delete, remote: true do %>
+      <p class="like-button"><i class="fas fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= @article.likes.count %></span></p>
     <% end %>
   <% else %>
-    <%= link_to "#", method: :post, remote: true do %>
-      <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%#= @article.likes.count %></span></p>
+    <%= link_to create_like_path(@article), method: :post, remote: true do %>
+      <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= @article.likes.count %></span></p>
     <% end %>
   <% end %>
 <% end %>

@@ -15,4 +15,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :articles, only: [:new, :create, :show, :edit, :update, :destroy]
     end
+  
+  post 'like/:id' => 'likes#create', as: 'create_like'
+  delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 end
