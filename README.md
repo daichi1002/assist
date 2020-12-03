@@ -1,3 +1,7 @@
+## Business-Assist
+
+![c2b2a4d1dc170636d31ae05d95cef596](https://user-images.githubusercontent.com/72916511/100971789-ec334f80-357a-11eb-9470-4d81beda1643.gif)
+
 # テーブル設計
 
 ## users テーブル
