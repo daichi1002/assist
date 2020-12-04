@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="offset-sm-2 col-sm-8 offset-sm-2">
-    <%= form_with model: @contact, url:contacts , class: 'registration-main', local: true do |f| %>
+    <%= form_with model: @contact, class: 'registration-main', local: true do |f| %>
       <div class='form-wrap'>
         <div class='form-header'>
           <h4 class='form-header-text'><i class="far fa-paper-plane fa-lg my-orange"></i>お問い合わせ</h4>
@@ -10,11 +10,11 @@
   <%= render 'layouts/error_messages', model: f.object %>
         <div class="form-group">
           <div class='form-text-wrap'>
-            <label class="form-text" for="first-name">お名前</label>
+            <label class="form-text" for="name">お名前</label>
             <span class="badge badge-danger">必須</span>
           </div>
           <div class='input-name-wrap'>
-            <%= f.text_field :first_name, class:"input-name", id:"first-name", placeholder:"例) 田中太郎" %>
+            <%= f.text_field :name, class:"input-name", id:"name", placeholder:"例) 田中太郎" %>
           </div>
         </div>
 
@@ -28,10 +28,10 @@
 
         <div class="form-group">
           <div class='form-text-wrap'>
-            <label class="form-text" for="email">内容</label>
+            <label class="form-text" for="content">内容</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <%= f.text_area :email, class:"article-input-default", id:"information", autofocus: true %>
+          <%= f.text_area :content, class:"article-input-default", id:"content", autofocus: true %>
         </div>
  
         <div class='register-btn'>
