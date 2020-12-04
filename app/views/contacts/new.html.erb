@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-sm-2 col-sm-8 offset-sm-2">
+    <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+      <div class='form-wrap'>
+        <div class='form-header'>
+          <h4 class='form-header-text'><i class="far fa-paper-plane fa-lg my-orange"></i>お問い合わせ</h4>
+        </div>
+
+  <%= render 'layouts/error_messages', model: f.object %>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="first-name">お名前</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <div class='input-name-wrap'>
+            <%= f.text_field :first_name, class:"input-name", id:"first-name", placeholder:"例) 田中太郎" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="email">メールアドレス</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+        </div>
+
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="email">内容</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.text_area :email, class:"article-input-default", id:"information", autofocus: true %>
+        </div>
+ 
+        <div class='register-btn'>
+          <%= f.submit "送信する" ,class:"register-red-btn" %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
