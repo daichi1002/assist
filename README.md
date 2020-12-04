@@ -59,7 +59,7 @@ https://business-assist.work/
  - お気に入り登録した記事をマイページにて表示
 
 
-#### お問い合わせ昨日(Action Mailer)
+#### お問い合わせ機能(Action Mailer)
 
  - ユーザーがお問い合わせを送信すると管理者はメールで受信
 
