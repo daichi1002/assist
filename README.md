@@ -19,34 +19,49 @@ https://business-assist.work/
 
 ## 機能一覧
 
-○ユーザー管理機能(devise, Active Hash)
+#### ユーザー管理機能(devise, Active Hash)
+
  - ログイン・ログアウト機能
  - SNS認証(Facebook, Googleアカウント)
 
-○記事投稿機能(管理者のみ)
+
+#### 記事投稿機能(管理者のみ)
+
  - 画像投稿(Active Storage, S3)
  - 投稿編集・削除
 
-○記事閲覧機能
+
+#### 記事閲覧機能
+
  - 新着記事閲覧
  - 人気記事一覧として、いいね数の多い記事が表示されるよう実装
 
-○記事詳細閲覧機能
+
+#### 記事詳細閲覧機能
+
  - Google Mapを使用し現在地から目的地を検索できるよう実装
  - 管理者のみ編集・削除ボタン表示
  - 非同期いいね機能(ログインユーザーのみ可)
 
  ![de4e794e535972c2cb22318d86664ecc](https://user-images.githubusercontent.com/72916511/101111987-b7c59f00-361f-11eb-9968-55bba2049924.gif)
 
-○記事検索機能(ransack)
+
+#### 記事検索機能(ransack)
+
  - キーワード検索
  - Active Hashによるselect検索
 
  ![d9bd1a2a9d2d38c4c68effeb9f2a7609](https://user-images.githubusercontent.com/72916511/101112058-d9bf2180-361f-11eb-9a1f-5c8fafc64557.gif)
 
 
-○マイページ機能
+#### マイページ機能
+
  - お気に入り登録した記事をマイページにて表示
+
+
+#### お問い合わせ昨日(Action Mailer)
+
+ - ユーザーがお問い合わせを送信すると管理者はメールで受信
 
 
 ## 環境・使用技術
@@ -66,6 +81,5 @@ https://business-assist.work/
 
 ## 実装予定の機能
 
- - お問い合わせフォーム
  - コメント機能
  - 通知機能
