@@ -9,7 +9,7 @@
 
 ## App URL
 
-http://business-assist.work/
+https://business-assist.work/
 
 (ヘッダーにある簡易ログインからゲストユーザーとしてログインできます)
 
