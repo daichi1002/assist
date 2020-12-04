@@ -10,6 +10,7 @@
 ## App URL
 
 http://business-assist.work/
+
 (ヘッダーにある簡易ログインからゲストユーザーとしてログインできます)
 
 ## 制作背景
@@ -35,9 +36,14 @@ http://business-assist.work/
  - 管理者のみ編集・削除ボタン表示
  - 非同期いいね機能(ログインユーザーのみ可)
 
+ ![de4e794e535972c2cb22318d86664ecc](https://user-images.githubusercontent.com/72916511/101111987-b7c59f00-361f-11eb-9968-55bba2049924.gif)
+
 ○記事検索機能(ransack)
  - キーワード検索
  - Active Hashによるselect検索
+
+ ![d9bd1a2a9d2d38c4c68effeb9f2a7609](https://user-images.githubusercontent.com/72916511/101112058-d9bf2180-361f-11eb-9a1f-5c8fafc64557.gif)
+
 
 ○マイページ機能
  - お気に入り登録した記事をマイページにて表示
