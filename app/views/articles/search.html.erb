@@ -7,7 +7,6 @@
             <div class="card-group col-md-6 col-lg-3">
               <%= link_to admin_article_path(result.id), class: "article-link" do%>
               <span class="article-info"><%= result.genre.name %></span>
-              <span class="article-info" style="float: right;"><%= result.created_at.strftime('%Y/%m/%d') %></span>
               <div class="card articles-chart">
                 <%= image_tag result.image, class:"card-img-top" if result.image.attached? %> 
                 <div class="card-body">
@@ -24,7 +23,6 @@
             <div class="card-group col-md-6 col-lg-3">
               <%= link_to article_path(result.id), class: "article-link" do%>
                 <span class="article-info"><%= result.genre.name %></span>
-                <span class="article-info" style="float: right;"><%= result.created_at.strftime('%Y/%m/%d') %></span>
               <div class="card articles-chart">
                 <%= image_tag result.image, class:"card-img-top" if result.image.attached? %> 
                   <div class="card-body">
