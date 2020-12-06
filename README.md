@@ -12,6 +12,7 @@
 https://business-assist.work/
 
 ・ヘッダーにある簡易ログインからゲストユーザーとしてログインできます
+
 ・管理者用ログイン 【email】:admin@example.com【password】:daichi1002
 ## 制作背景
 
