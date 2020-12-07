@@ -16,6 +16,8 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @article.comments.includes(:user).order('created_at DESC').limit(7)
   end
 
   def edit
