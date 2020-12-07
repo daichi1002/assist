@@ -53,6 +53,18 @@
           <%= link_to '編集', edit_admin_article_path, method: :get, class: "btn btn-outline-success w-25" %>
           <%= link_to '削除', admin_article_path, method: :delete, class: "btn btn-outline-info w-25" %>
           </div>
+          <div class="comments-chart">
+            <h4 class='article-form-header-text'>
+            <i class="fas fa-broom fa-lg my-orange"></i>コメント一覧
+            </h4>
+            <% if @comments %>
+              <% @comments.each do |comment| %>
+                <p>
+                  <%= comment.text %>
+                </p>
+              <% end %>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>

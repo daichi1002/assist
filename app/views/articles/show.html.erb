@@ -49,6 +49,18 @@
                 <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
               <% end %>
           </div>
+          <div class="comments-chart">
+            <h4 class='article-form-header-text'>
+            <i class="fas fa-broom fa-lg my-orange"></i>コメント一覧
+            </h4>
+            <% if @comments %>
+              <% @comments.each do |comment| %>
+                <p>
+                  <%= comment.text %>
+                </p>
+              <% end %>
+            <% end %>
+          </div>
         <%= render "layouts/map" %>
       </div>
     </div>
