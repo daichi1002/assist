@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   
   root to: 'articles#index'
   get 'articles/search'
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    resources :comments, only: [:new, :create]
+  end
     namespace :admin do
       resources :articles, only: [:new, :create, :show, :edit, :update, :destroy]
     end

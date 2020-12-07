@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-sm-2 col-sm-8 offset-sm-2">
+      <% if user_signed_in? %>
+      <%= form_with url: article_comments_path,  local: true do |f| %>
+      <div class='article-form-wrap'>
+        <div class='article-form-header'>
+          <h4 class='article-form-header-text'>
+            <i class="fas fa-broom fa-lg my-orange"></i>コメント
+          </h4>
+        </div>
+        <%#= render 'layouts/error_messages', model: f.object %>
+
+        <div class="article-form-group">
+          <div class='article-form-text-wrap'>
+            <label class="article-form-text" for="comment">内容</label>
+            <span class="badge badge-danger">必須</span>
+          </div>
+          <%= f.text_area :text, class:"article-input-default", id:"comment", autofocus: true %>
+        </div>
+        <div class='article-btn'>
+          <%= f.submit "コメントする" ,class:"article-red-btn" %>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
