@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(comment_params)
+    @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to article_path
+      redirect_to new_article_comment_path
     else
       render :new
     end
@@ -14,6 +14,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:text).merge(user_id:current_user.id, article_id: params[:article_id])
+    params.permit(:text).merge(user_id:current_user.id, article_id: params[:article_id])
   end
 end
