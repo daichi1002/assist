@@ -13,13 +13,13 @@
 
         <div class="article-form-group">
           <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="image">内容</label>
+            <label class="article-form-text" for="comment">内容</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <%= f.text_area :content, class:"article-input-default", id:"content", autofocus: true %>
+          <%= f.text_area :text, class:"article-input-default", id:"comment", autofocus: true %>
         </div>
         <div class='article-btn'>
-          <%= f.submit "投稿" ,class:"article-red-btn" %>
+          <%= f.submit "コメントする" ,class:"article-red-btn" %>
         </div>
       </div>
       <% end %>
