@@ -45,6 +45,9 @@
               </tbody>
             </table>
               <%= render partial: "likes/like", locals: { article:@article } %>
+              <%= link_to new_article_comment_path(@article.id) do %>
+                <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
+              <% end %>
           </div>
           <div class="admin-oparation text-center">
           <%= link_to '編集', edit_admin_article_path, method: :get, class: "btn btn-outline-success w-25" %>

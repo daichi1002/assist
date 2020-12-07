@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
       redirect_to article_path
     else
       render :new
+    end
   end
 
   private

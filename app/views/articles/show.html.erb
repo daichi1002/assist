@@ -45,8 +45,11 @@
               </tbody>
             </table>
               <%= render partial: "likes/like", locals: { article:@article } %>
-              <%= render "layouts/map" %>
+              <%= link_to new_article_comment_path(@article.id) do %>
+                <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
+              <% end %>
           </div>
+        <%= render "layouts/map" %>
       </div>
     </div>
   </div>
