@@ -69,6 +69,11 @@ https://business-assist.work/
  - ユーザーがお問い合わせを送信すると管理者はメールで受信
 
 
+## ER図
+
+![assist](https://user-images.githubusercontent.com/72916511/101444942-f337d480-3963-11eb-821e-5a61f4393ffc.png)
+
+
 ## インフラ構成図
 
 ![Untitled Diagram (3)](https://user-images.githubusercontent.com/72916511/101437770-46a22680-3954-11eb-98e7-24b284ce45c6.png)
