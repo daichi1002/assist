@@ -19,3 +19,5 @@ ja:
         end_date: '取扱終了日'
         information: '詳細'
         url: 'URL'
+      comment:
+        text: "コメント"
