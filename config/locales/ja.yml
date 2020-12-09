@@ -21,3 +21,7 @@ ja:
         url: 'URL'
       comment:
         text: "コメント"
+      contact:
+        name: 'お名前'
+        email: 'メールアドレス'
+        content: 'お問い合わせ内容'
