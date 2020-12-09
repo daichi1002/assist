@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :article do
+    id { 1 }
     title { Faker::Lorem.sentence }
     genre_id { 1 }
     type_id { 1 }
@@ -9,6 +10,7 @@ FactoryBot.define do
     end_date { Faker::Date.between(from: '2022-12-01', to: '2023-12-01') }
     information { Faker::Lorem.sentence }
     url { Faker::Lorem.sentence }
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'app/assets/images/list1.png')) }
     association :user
   end
 end
