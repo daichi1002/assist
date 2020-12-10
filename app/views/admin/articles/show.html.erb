@@ -45,10 +45,6 @@
           <%= link_to new_article_comment_path(@article.id) do %>
             <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
           <% end %>
-          <div class="admin-oparation text-center">
-            <%= link_to '編集', edit_admin_article_path, method: :get, class: "btn btn-outline-success w-25" %>
-            <%= link_to '削除', admin_article_path, method: :delete, class: "btn btn-outline-info w-25" %>
-          </div>
           <div class="card comment-content">
             <div class="card-header" role="tab" id="collapseListGroupHeading1">
               <h5 class="mb-0">
@@ -67,6 +63,8 @@
               </ul>
             </div>
           </div>
+          <%= link_to '編集', edit_admin_article_path, method: :get, class: "btn btn-outline-success w-25 admin-btn" %>
+          <%= link_to '削除', admin_article_path, method: :delete, class: "btn btn-outline-info w-25 admin-btn" %>
       </div>
     </div>
   </div>
