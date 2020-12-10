@@ -61,12 +61,12 @@
   resize: none;
 }
 
-.input-birth-wrap {
+.input-date-wrap {
   display: flex;
   flex-wrap: wrap;
 }
 
-.input-birth-wrap>select {
+.input-date-wrap>select {
   width: 20%;
   margin-top: 5px;
   height: 45px;
@@ -78,7 +78,7 @@
   cursor: pointer;
 }
 
-.input-birth-wrap>p {
+.input-date-wrap>p {
   line-height: 60px;
   padding: 0 5px;
 }
