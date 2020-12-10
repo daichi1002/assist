@@ -1,14 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="offset-sm-2 col-sm-8 offset-sm-2">
-    <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-        <h4 class='form-header-text text-center'>会員情報入力</h4>
+    <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+      <h5 class='form-header-text text-center'>
+          <i class="fas fa-user-plus fa-2x my-orange"></i>　会員情報入力
+          </h5>
 
   <%= render 'layouts/error_messages', model: f.object %>
-        <div class="text-center">
-          <%= link_to 'Facebookで登録',user_facebook_omniauth_authorize_path, class:"btn btn-outline-primary", method: :post%>
-          <%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path,  class:"btn btn-outline-secondary", method: :post%>
+        <div class="d-flex justify-content-between mt-4">
+          <%= link_to user_facebook_omniauth_authorize_path, class:"btn btn-outline-primary sns-btn", method: :post do %>
+              <i class="fab fa-facebook fa-2x"></i>
+          <% end %>
+          <%= link_to user_google_oauth2_omniauth_authorize_path, class:"btn btn-outline-danger sns-btn", method: :post do %>
+            <i class="fab fa-google fa-2x"></i>
+          <% end %>
         </div>
+        <p class="login-help text-center">※SNSアカウントで登録を行うと、パスワードの入力は不要になります</p>
         <div class="form-group">
           <div class='form-text-wrap'>
             <label class="form-text" for="first-name">お名前(姓)</label>
@@ -99,7 +106,7 @@
           </div>
         </div>
         <div class='register-btn'>
-          <%= f.submit "会員登録" ,class:"btn btn-outline-danger" %>
+          <%= f.submit "会員登録" ,class:"btn btn-outline-danger w-100" %>
         </div>
       </div>
     <% end %>

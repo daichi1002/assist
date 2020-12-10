@@ -1,14 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="offset-sm-2 col-sm-8 offset-sm-2">
-      <%= form_with model: @user, url: "#", class: 'registration-main', local: true do |f| %>
+      <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
         <h5 class='form-header-text text-center'>
           <i class="fas fa-sign-in-alt fa-2x my-orange"></i>　ログイン
         </h5>
-        <div class='login-flash-message'>
-          <%= flash[:notice] %>
-          <%= flash[:alert] %>
-        </div>
+
+<%= render 'layouts/error_messages', model: f.object %>
         <div class="d-flex justify-content-between mt-4">
           <%= link_to user_facebook_omniauth_authorize_path, class:"btn btn-outline-primary sns-btn", method: :post do %>
               <i class="fab fa-facebook fa-2x"></i>
