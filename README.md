@@ -34,6 +34,7 @@ https://business-assist.work/
 
  - 画像投稿(Active Storage, S3)
  - 投稿編集・削除
+ - 画像プレビュー機能
 
 
 #### 記事閲覧機能
@@ -69,6 +70,9 @@ https://business-assist.work/
  - ユーザーがお問い合わせを送信すると管理者はメールで受信
 
 
+#### コメント機能
+
+
 ## ER図
 
 ![assist](https://user-images.githubusercontent.com/72916511/101444942-f337d480-3963-11eb-821e-5a61f4393ffc.png)
@@ -96,5 +100,4 @@ https://business-assist.work/
 
 ## 実装予定の機能
 
- - コメント機能
  - 通知機能
