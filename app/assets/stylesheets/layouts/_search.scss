@@ -1,15 +1,18 @@
-.search-content {  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
+.search-wrapper {
+  width: 600px;
+}
+
+.search-content {
+  margin-bottom: 20px;
+}
+
+.radio-btn {
+  float: right;
 }
 
 .search-select-box {
-  width: 30vw;
-  margin-top: 5px;
-  height: 48px;
-  padding: 10px 16px 8px;
+  width: 200px;
+  padding: 5px 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
@@ -17,23 +20,17 @@
   resize: none;
 }
 
-.search-label {
-  margin-left: 70px;
-  font-size: 20px; 
-}
-
-.search-form {
-  margin-right: 70px;
-}
-
-.search-radio-button {
-  margin-right: 70px;
+.search-form-control {
+  width: 200px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
 }
 
 .search-btn {
-  margin-right: 70px;
-}
-
-.form-control {
-  width: 50vw;
+  width: 300px;
+  margin-top: 10px;
 }

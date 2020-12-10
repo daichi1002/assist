@@ -2,75 +2,72 @@
   <div class="row">
     <div class="offset-sm-2 col-sm-8 offset-sm-2">
       <%= form_with model: @article, url:admin_articles_path, local: true do |f| %>
+        <h5 class='form-header-text text-center'>
+          <i class="fas fa-broom fa-2x my-orange"></i>新規記事投稿
+        </h5>
 
-      <div class='article-form-wrap'>
-        <div class='article-form-header'>
-          <h4 class='article-form-header-text'>
-            <i class="fas fa-broom fa-lg my-orange"></i>新規記事投稿
-          </h4>
-        </div>
         <%= render 'layouts/error_messages', model: f.object %>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="image">イメージ画像</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="image">イメージ画像</label>
             <span class="badge badge-danger">必須</span>
           </div>
           <%= f.file_field :image, class:"image-input-name", id:"image" %>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="title">タイトル</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="title">タイトル</label>
             <span class="badge badge-danger">必須</span>
           </div>
           <div class='article-input-name-wrap'>
-            <%= f.text_field :title, class:"article-input-name", id:"title", placeholder:"" %>
+            <%= f.text_field :title, class:"input-name", id:"title", placeholder:"" %>
           </div>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="type">種類</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="type">種類</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <%= f.collection_select(:type_id, Type.all, :id, :name, {include_blank: "---"}, {class:"article-select-box", id:"type"}) %>
+          <%= f.collection_select(:type_id, Type.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"type"}) %>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="genre">ジャンル</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="genre">ジャンル</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: "---"}, {class:"article-select-box", id:"genre"}) %>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"genre"}) %>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="area">エリア</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="area">エリア</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <%= f.collection_select(:area_id, Area.all, :id, :name, {include_blank: "---"}, {class:"article-select-box", id:"area"}) %>
+          <%= f.collection_select(:area_id, Area.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"area"}) %>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="maximum-price">上限金額</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="maximum-price">上限金額</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <%= f.text_field :maximum_price, class:"article-input-name", id:"maximum-price", placeholder:"¥100,000,000", autofocus: true %>
+          <%= f.text_field :maximum_price, class:"input-name", id:"maximum-price", placeholder:"100,000,000", autofocus: true %>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="start-date">取扱開始日</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="start-date">取扱開始日</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <div class='article-input-date-wrap'>
+          <div class='input-date-wrap'>
             <%= raw sprintf(
                         f.date_select(
                           :start_date,
-                          class:'article-select-date',
+                          class:'select-date',
                           id:"start-date",
                           use_month_numbers: true,
                           prompt:'--',
@@ -81,16 +78,16 @@
           </div>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="end-date">取扱終了日</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="end-date">取扱終了日</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <div class='article-input-date-wrap'>
+          <div class='input-date-wrap'>
             <%= raw sprintf(
                         f.date_select(
                           :end_date,
-                          class:'article-select-date',
+                          class:'select-date',
                           id:"end-date",
                           use_month_numbers: true,
                           prompt:'--',
@@ -101,28 +98,27 @@
           </div>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="information">詳細</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="information">詳細</label>
             <span class="badge badge-danger">必須</span>
           </div>
           <%= f.text_area :information, class:"article-input-default", id:"information", placeholder:"" %>
         </div>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="url">URL</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="url">URL</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <%= f.text_field :url, class:"article-input-name", id:"url", placeholder:""%>
+          <%= f.text_field :url, class:"input-name", id:"url", placeholder:""%>
         </div>
 
-        <div class='article-btn'>
-          <%= f.submit "投稿" ,class:"article-red-btn" %>
+        <div class='article-btn text-center'>
+          <%= f.submit "投稿する" ,class:"btn btn-outline-danger w-50" %>
         </div>
       </div>
 
       <% end %>
     </div>
-  </div>
 </div>

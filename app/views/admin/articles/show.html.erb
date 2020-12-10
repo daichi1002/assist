@@ -1,58 +1,50 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <div class='article-form-wrap'>
-        <div class='article-form-header'>
-          <h4 class='article-form-header-text'>
-            <i class="fas fa-broom fa-lg my-orange"></i><%= @article.title %>
-          </h4>
-        </div>
-          <div class="table-responsive-lg text-center">
-            <table class="table table-bordered table-striped">
-              <tbody>
-                <tr>
-                  <td class="align-middle w-25">対象地域</th>
-                  <td class="align-middle"><%= @article.area.name %></td>
-                </tr>
-                <tr>
-                  <td class="align-middle w-25">種類</th>
-                  <td class="align-middle"><%= @article.type.name %></td>
-                </tr>
-                <tr>
-                  <td class="align-middle w-25">ジャンル</th>
-                  <td class="align-middle"><%= @article.genre.name %></td>
-                </tr>
-                <tr>
-                  <td class="align-middle w-25">上限金額</th>
-                  <td class="align-middle"><%= @article.maximum_price %></td>
-                </tr>
-                <tr>
-                  <td class="align-middle w-25">取扱開始日</th>
-                  <td class="align-middle"><%= @article.start_date %></td>
-                </tr>
-                <tr>
-                  <td class="align-middle w-25">取扱終了日</th>
-                  <td class="align-middle"><%= @article.end_date %></td>
-                </tr>
-                <tr>
-                  <td class="align-middle w-25">詳細</th>
-                  <td class="align-middle"><%= @article.information %></td>
-                </tr>
-                <tr>
-                  <td class="align-middle w-25">URL</th>
-                  <td class="align-middle"><%= @article.url %></td>
-                </tr>
-              </tbody>
-            </table>
-              <%= render partial: "likes/like", locals: { article:@article } %>
-              <%= link_to new_article_comment_path(@article.id) do %>
-                <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
-              <% end %>
-          </div>
-          <div class="admin-oparation text-center">
-          <%= link_to '編集', edit_admin_article_path, method: :get, class: "btn btn-outline-success w-25" %>
-          <%= link_to '削除', admin_article_path, method: :delete, class: "btn btn-outline-info w-25" %>
-          </div>
+      <h5 class='form-header-text text-center'>
+        <i class="fas fa-folder-open fa-lg my-orange"></i>　<%= @article.title %>
+      </h5>
+      <div class="table-responsive-lg text-center">
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td class="align-middle w-25">対象地域</th>
+              <td class="align-middle"><%= @article.area.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">種類</th>
+              <td class="align-middle"><%= @article.type.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">ジャンル</th>
+              <td class="align-middle"><%= @article.genre.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">上限金額</th>
+              <td class="align-middle"><%= @article.maximum_price %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">取扱開始日</th>
+              <td class="align-middle"><%= @article.start_date %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">取扱終了日</th>
+              <td class="align-middle"><%= @article.end_date %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">詳細</th>
+              <td class="align-middle"><%= @article.information %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">URL</th>
+              <td class="align-middle"><%= @article.url %></td>
+            </tr>
+          </tbody>
+        </table>
+          <%= render partial: "likes/like", locals: { article:@article } %>
+          <%= link_to new_article_comment_path(@article.id) do %>
+            <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
+          <% end %>
           <div class="card comment-content">
             <div class="card-header" role="tab" id="collapseListGroupHeading1">
               <h5 class="mb-0">
@@ -71,6 +63,8 @@
               </ul>
             </div>
           </div>
+          <%= link_to '編集', edit_admin_article_path, method: :get, class: "btn btn-outline-success w-25 admin-btn" %>
+          <%= link_to '削除', admin_article_path, method: :delete, class: "btn btn-outline-info w-25 admin-btn" %>
       </div>
     </div>
   </div>
