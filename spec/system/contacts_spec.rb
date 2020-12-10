@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "お問い合わせ送信", type: :system do
+RSpec.describe 'お問い合わせ送信', type: :system do
   before do
     @contact = FactoryBot.build(:contact)
   end

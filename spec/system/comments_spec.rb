@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "コメント投稿", type: :system do
+RSpec.describe 'コメント投稿', type: :system do
   before do
     @article = FactoryBot.create(:article)
     @user = FactoryBot.create(:user)
@@ -20,9 +20,9 @@ RSpec.describe "コメント投稿", type: :system do
       find('.comment-btn').click
       expect(current_path).to eq new_article_comment_path(@article)
       fill_in '内容', with: @comment
-      expect {
+      expect do
         find('input[name="commit"]').click
-      }.to change { Comment.count }.by(1)
+      end.to change { Comment.count }.by(1)
       expect(current_path).to eq article_path(@article)
       find('.mb-0').click
       expect(page).to have_content @comment
