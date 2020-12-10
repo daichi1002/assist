@@ -1,5 +1,5 @@
 <div class="container">
-  <h5 class="article-title"><i class="fas fa-tag fa-lg my-orange"></i><%= @user.last_name %>さんのお気に入り記事一覧</h5>
+  <h5 class="article-title"><i class="fas fa-paperclip fa-2x my-orange"></i><%= @user.last_name %>さんのお気に入り記事一覧</h5>
     <div class="row">
       <% @user.liked_articles.each do |article| %>
         <div class="card-group col-md-6 col-lg-3">
