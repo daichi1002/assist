@@ -1,6 +1,6 @@
 ## Business-Assist
 
-![c2b2a4d1dc170636d31ae05d95cef596](https://user-images.githubusercontent.com/72916511/100971789-ec334f80-357a-11eb-9470-4d81beda1643.gif)
+![26f7bfcabe6484bc83f8ebf58f8d0cfd](https://user-images.githubusercontent.com/72916511/101851872-c112b680-3b9f-11eb-9152-3277b6ef198c.gif)
 
 
 ## アプリケーション概要
@@ -49,7 +49,7 @@ https://business-assist.work/
  - 管理者のみ編集・削除ボタン表示
  - 非同期いいね機能(ログインユーザーのみ可)
 
- ![de4e794e535972c2cb22318d86664ecc](https://user-images.githubusercontent.com/72916511/101111987-b7c59f00-361f-11eb-9968-55bba2049924.gif)
+![0973890fcaff422a866fecd6127af73a](https://user-images.githubusercontent.com/72916511/101851810-a2142480-3b9f-11eb-8b90-7878761c4992.gif)
 
 
 #### 記事検索機能(ransack)
@@ -57,7 +57,7 @@ https://business-assist.work/
  - キーワード検索
  - Active Hashによるselect検索
 
- ![d9bd1a2a9d2d38c4c68effeb9f2a7609](https://user-images.githubusercontent.com/72916511/101112058-d9bf2180-361f-11eb-9a1f-5c8fafc64557.gif)
+![8fb64f238ee3dcde752c4eb0ffb7aad4](https://user-images.githubusercontent.com/72916511/101851927-dab3fe00-3b9f-11eb-85c1-9929c8e93f48.gif)
 
 
 #### マイページ機能
