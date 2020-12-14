@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def search
+    @articles = @a.result(distinct:true).page(params[:page]).per(8)
   end
 
   private
