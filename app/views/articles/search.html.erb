@@ -39,6 +39,10 @@
         <h5 class="alert">該当する投稿はありません！</h5>
       <% end %>
     </div>
-  <%= paginate @results %>
-  <%= link_to 'トップページへ戻る', root_path %>
+</div>
+<div class="container text-center">
+  <p class="paginate">
+    <%= paginate @results %>
+    <%= link_to 'トップページへ戻る', root_path %>
+  </p>
 </div>
