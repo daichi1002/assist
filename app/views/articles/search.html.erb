@@ -12,7 +12,7 @@
                 <div class="card-body">
                   <h5 class="card-title"><%= result.title %></h5>
                   <p class="card-text"><%= result.information.truncate(30) %></p>
-                  <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%#= result.likes.count %></span></p>
+                  <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= result.likes.count %></span></p>
                 </div>
               </div>
               <% end %>
@@ -28,7 +28,7 @@
                   <div class="card-body">
                     <h5 class="card-title"><%= result.title %></h5>
                     <p class="card-text"><%= result.information.truncate(30) %></p>
-                    <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%#= result.likes.count %></span></p>
+                    <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= result.likes.count %></span></p>
                   </div>
               </div>
               <% end %>
@@ -39,5 +39,6 @@
         <h5 class="alert">該当する投稿はありません！</h5>
       <% end %>
     </div>
+  <%= paginate @results %>
   <%= link_to 'トップページへ戻る', root_path %>
 </div>
