@@ -56,7 +56,8 @@ https://business-assist.work/
 
  - キーワード検索
  - Active Hashによるselect検索
-
+ - 検索結果一覧をページネーション機能を用いて表示(kaminari)
+ 
 ![8fb64f238ee3dcde752c4eb0ffb7aad4](https://user-images.githubusercontent.com/72916511/101851927-dab3fe00-3b9f-11eb-85c1-9929c8e93f48.gif)
 
 
