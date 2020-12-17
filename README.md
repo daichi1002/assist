@@ -92,6 +92,8 @@ https://business-assist.work/
  - Ruby'2.6.5'/Ruby on Rails'6.0.0'
 #### テストコード
  - Rspec/Capybara
+#### 開発環境
+ - Docker/Docker-compose
 #### 本番環境
  - AWS(EC2,Route53,S3)
  - アプリケーションサーバー(Unicorn)
@@ -101,4 +103,5 @@ https://business-assist.work/
 
 ## 実装予定の機能
 
+ - CircleCIの導入
  - 通知機能
