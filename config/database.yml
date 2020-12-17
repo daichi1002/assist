@@ -16,11 +16,11 @@ default: &default
   username: root
   password: password
   host: db
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
   database: assist_development
-  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -50,7 +50,10 @@ test:
 #
 production:
   <<: *default
-  database: assist_production
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
+  database: assist_production
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
