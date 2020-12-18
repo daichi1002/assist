@@ -2,24 +2,21 @@
   <div class="row">
     <div class="offset-sm-2 col-sm-8 offset-sm-2">
       <% if user_signed_in? %>
-      <%= form_with url: article_comments_path,  local: true do |f| %>
-      <div class='article-form-wrap'>
-        <div class='article-form-header'>
-          <h4 class='article-form-header-text'>
-            <i class="fas fa-broom fa-lg my-orange"></i>コメント
-          </h4>
-        </div>
-        <%#= render 'layouts/error_messages', model: f.object %>
+      <%= form_with model: @comment, url: article_comments_path,  local: true do |f| %>
+          <h5 class='form-header-text text-center'>
+            <i class="fas fa-broom fa-lg my-orange"></i>　コメントを投稿する
+          </h5>
+        <%= render 'layouts/error_messages', model: f.object %>
 
-        <div class="article-form-group">
-          <div class='article-form-text-wrap'>
-            <label class="article-form-text" for="comment">内容</label>
+        <div class="form-group">
+          <div class='form-text-wrap'>
+            <label class="form-text" for="comment">内容</label>
             <span class="badge badge-danger">必須</span>
           </div>
           <%= f.text_area :text, class:"article-input-default", id:"comment", autofocus: true %>
         </div>
-        <div class='article-btn'>
-          <%= f.submit "コメントする" ,class:"article-red-btn" %>
+        <div class='article-btn text-center'>
+          <%= f.submit "コメントする" ,class:"btn btn-outline-danger w-50" %>
         </div>
       </div>
       <% end %>
