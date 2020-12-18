@@ -42,4 +42,10 @@ class User < ApplicationRecord
       user.password = SecureRandom.hex(10)
     end
   end
+
+  def self.admin
+    find_or_create_by!(email: 'admin@example.com') do |guest_admin|
+      guest_admin.password = ENV[admin_pass]
+    end
+  end
 end
