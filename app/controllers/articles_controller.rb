@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @results = @a.result(distinct:true).page(params[:page]).per(8).order('created_at DESC')
+    @results = @a.result(distinct: true).page(params[:page]).per(8).order('created_at DESC')
   end
 
   private
