@@ -10,10 +10,10 @@
 
         <div class="form-group">
           <div class='form-text-wrap'>
-            <label class="form-text" for="comment">内容</label>
+            <label class="form-text" for="text">内容</label>
             <span class="badge badge-danger">必須</span>
           </div>
-          <%= f.text_area :text, class:"article-input-default", id:"comment", autofocus: true %>
+          <%= f.text_area :text, class:"article-input-default", id:"text", autofocus: true %>
         </div>
         <div class='article-btn text-center'>
           <%= f.submit "コメントする" ,class:"btn btn-outline-danger w-50" %>
