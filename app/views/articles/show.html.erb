@@ -42,10 +42,12 @@
           </tbody>
         </table>
           <% if user_signed_in? %>
-          <%= render partial: "likes/like", locals: { article:@article } %>
-          <%= link_to new_article_comment_path(@article.id) do %>
-            <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
-          <% end %>
+            <%= render partial: "likes/like", locals: { article:@article } %>
+            <%= link_to new_article_comment_path(@article.id) do %>
+              <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
+            <% end %>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button float-right" data-show-count="false">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           <% end %>
           <div class="card comment-content">
             <div class="card-header" role="tab" id="collapseListGroupHeading1">
