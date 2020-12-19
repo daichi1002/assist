@@ -19,6 +19,5 @@ class ArticlesController < ApplicationController
 
   def search_article
     @a = Article.ransack(params[:q])
-    @results = @a.result
   end
 end
