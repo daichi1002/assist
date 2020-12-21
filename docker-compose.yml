@@ -1,26 +1,24 @@
 version: '3'
-
-volumes:
-  mysql-data:
-
 services:
-  web:
-    build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
-    ports:
-      - '3000:3000'
-    volumes:
-      - '.:/assist'
-    tty: true
-    stdin_open: true
-    depends_on:
-      - db
-    links:
-      - db
-
   db:
     image: mysql:5.6.47
-    volumes:
-      - 'mysql-data:/var/lib/mysql'
     environment:
-      - 'MYSQL_ROOT_PASSWORD=password'
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/assist
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+volumes:
+  mysql-data:
+    driver: local
