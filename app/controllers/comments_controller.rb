@@ -7,13 +7,15 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      ActionCable.sever.broadcast 'comment_channel', content: @comment
+      ActionCable.server.broadcast 'comment_channel', content: @comment
+    else
+      render :new
     end
   end
 
   private
 
   def comment_params
-    params.permit(:text).merge(user_id: current_user.id, article_id: params[:article_id])
+    params.require(:comment).permit(:text).merge(user_id: current_user.id, article_id: params[:article_id])
   end
 end

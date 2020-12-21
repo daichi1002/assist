@@ -18,7 +18,7 @@
         <div class='article-btn text-center'>
           <%= f.submit "コメントする" ,class:"btn btn-outline-danger w-50" %>
         </div>
-      </div>
+      <% end %>
       <% end %>
     </div>
   </div>
@@ -29,15 +29,11 @@
       <h5 class='form-header-text text-center'>
         <i class="fas fa-broom fa-lg my-orange"></i>　コメント一覧
       </h5>
-      <div class="form-group">
-        <div class='form-text-wrap'>
           <div id ='comments'>
             <%= @comments.reverse_each do |comment| %>
-            <p><%= comment.text %></p>
+                <p><%= comment.text %></p>
             <% end %>
           </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
