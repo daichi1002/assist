@@ -20,12 +20,24 @@
         </div>
       </div>
       <% end %>
-      <div id ='comments'>
-        <%= @comments.reverse_each do |comment| %>
-          <p><%= comment.text %></p>
-        <% end %>
+    </div>
+  </div>
+</div>
+<div class ="container">
+  <div class="row">
+    <div class="offset-sm-2 col-sm-8 offset-sm-2">
+      <h5 class='form-header-text text-center'>
+        <i class="fas fa-broom fa-lg my-orange"></i>　コメント一覧
+      </h5>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <div id ='comments'>
+            <%= @comments.reverse_each do |comment| %>
+            <p><%= comment.text %></p>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
