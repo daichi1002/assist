@@ -1,16 +1,13 @@
 class CommentsController < ApplicationController
   def new
+    @comments = Comment.all
     @comment = Comment.new
   end
 
   def create
     @comment = Comment.new(comment_params)
-    if @comment.save && current_user.admin?
-      redirect_to admin_article_path(@comment.article)
-    elsif @comment.save
-      redirect_to article_path(@comment.article)
-    else
-      render :new
+    if @comment.save
+      ActionCable.sever.broadcast 'comment_channel', content: @comment
     end
   end
 
