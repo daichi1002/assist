@@ -71,8 +71,9 @@ https://business-assist.work/
  - ユーザーがお問い合わせを送信すると管理者はメールで受信
 
 
-#### コメント機能
+#### コメント機能(Action Cable)
 
+ - ActionCableを使用した即時コメント機能
 
 ## ER図
 
