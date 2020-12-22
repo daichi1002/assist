@@ -29,11 +29,11 @@
       <h5 class='form-header-text text-center'>
         <i class="fas fa-broom fa-lg my-orange"></i>　コメント一覧
       </h5>
-          <div id ='comments'>
-            <%= @comments.reverse_each do |comment| %>
-                <p><%= comment.text %></p>
-            <% end %>
-          </div>
+      <div id ='comments'>
+        <% @comments.each do |comment| %>
+          <p><%= comment.text %></p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
