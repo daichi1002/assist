@@ -30,7 +30,7 @@
         <i class="fas fa-broom fa-lg my-orange"></i>　コメント一覧
       </h5>
       <div id ='comments'>
-        <% @comments.each do |comment| %>
+        <% @comments.reverse_each do |comment| %>
           <p><%= comment.text %></p>
         <% end %>
       </div>
