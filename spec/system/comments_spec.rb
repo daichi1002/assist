@@ -23,8 +23,6 @@ RSpec.describe 'コメント投稿', type: :system do
       expect do
         find('input[name="commit"]').click
       end.to change { Comment.count }.by(1)
-      expect(current_path).to eq article_path(@article)
-      find('.mb-0').click
       expect(page).to have_content @comment
     end
   end
