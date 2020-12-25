@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="offset-sm-2 col-sm-8 offset-sm-2">
-    <%= form_with url: company_registration_path, local: true do |f| %>
+    <%= form_with model: @company, url: company_registration_path, local: true do |f| %>
       <h5 class='form-header-text text-center'>
           <i class="fas fa-user-plus fa-2x my-orange"></i>　法人会員情報入力
           </h5>

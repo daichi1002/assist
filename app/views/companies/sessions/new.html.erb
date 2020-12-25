@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="offset-sm-2 col-sm-8 offset-sm-2">
-      <%= form_with url: company_session_path, class: 'registration-main', local: true do |f| %>
+      <%= form_with model: @company,url: company_session_path, class: 'registration-main', local: true do |f| %>
         <h5 class='form-header-text text-center'>
-          <i class="fas fa-sign-in-alt fa-2x my-orange"></i>　ログイン
+          <i class="fas fa-sign-in-alt fa-2x my-orange"></i>　法人会員ログイン
         </h5>
 
         <%= render 'layouts/error_messages', model: f.object %>

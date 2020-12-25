@@ -13,6 +13,7 @@
         <li class="nav-item login-user">ようこそ、<%= current_user.first_name %>さん！</li>
       </ul>
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><%= link_to 'ビジネスマッチング', '#' %></li>
         <li class="nav-item"><%= link_to '新規投稿', new_admin_article_path %></li>
         <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
         <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %></li>
@@ -29,6 +30,21 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
         <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %></li>
+        <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li class="nav-item"><%= link_to 'お問い合わせ', new_contacts_path %></li>
+      </ul>
+    </div>
+
+<%# 法人会員がログインしているとき %>
+    <% elsif company_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item login-user">ようこそ、<%= current_company.company_name %> ご担当者様</li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><%= link_to 'ビジネスマッチング', '#' %></li>
+        <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
+        <li class="nav-item"><%= link_to 'マイページ', '#' %></li>
         <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <li class="nav-item"><%= link_to 'お問い合わせ', new_contacts_path %></li>
       </ul>
