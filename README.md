@@ -28,6 +28,7 @@ https://business-assist.work/
 
  - ログイン・ログアウト機能
  - SNS認証(Facebook, Googleアカウント)
+ - 法人会員・個人会員登録機能
 
 
 #### 記事投稿機能(管理者のみ)
