@@ -4,6 +4,11 @@ Rails.application.routes.draw do
     passwords:     'companies/passwords',
     registrations: 'companies/registrations'
   }
+
+  devise_scope :company do
+    post 'companies/guest_sign_in', to: 'companies/sessions#new_guest_company'
+  end
+  
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',

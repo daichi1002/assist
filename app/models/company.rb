@@ -1,6 +1,12 @@
 class Company < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :likes
+  has_many :liked_articles, through: :likes, source: :article
+  has_many :comments, dependent: :destroy
+
+  def liked_by?(article_id)
+    likes.where(article_id: article_id).exists?
+  end
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
@@ -12,4 +18,10 @@ class Company < ApplicationRecord
   validates :postal_code, format: { with: /\A\d{7}\z/, message: 'は数字のみで入力してください' }
 
   validates :phone_number, format: { with: /\A\d{11}\z/, message: 'は数字のみで入力してください' }
+
+  def self.login
+    find_or_create_by!(company_name: '株式会社ゲストログイン', company_name_kana: 'カ）ゲストログイン', email: 'company@example.com', postal_code: '1234567', address: '宮崎県宮崎市宮崎1-1', phone_number: '09012345678', introduction: 'テスト', staff: '営業部長 田中') do |guest_company|
+      guest_company.password = SecureRandom.hex(10)
+    end
+  end
 end
