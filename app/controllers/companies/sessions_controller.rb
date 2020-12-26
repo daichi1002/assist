@@ -3,6 +3,11 @@
 class Companies::SessionsController < Devise::SessionsController
   before_action :configure_sign_in_params, only: [:create]
 
+  def new_guest_company
+    company = Company.login
+    sign_in company
+    redirect_to root_path
+  end
   # GET /resource/sign_in
   # def new
   #   super

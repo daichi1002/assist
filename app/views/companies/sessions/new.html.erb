@@ -24,6 +24,7 @@
         </div>
         <div class='login-btn'>
           <%= f.submit "ログイン" , class:"btn btn-outline-danger w-100" %>
+          <%= link_to 'ゲストログイン(法人会員用)', companies_guest_sign_in_path, method: :post, class:"btn btn-outline-warning" %>
           <%= link_to '新規会員登録はこちら',  new_company_registration_path, class:"btn btn-outline-warning" %>
         </div>
       </div>
