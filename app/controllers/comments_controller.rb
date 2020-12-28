@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def new
     @article = Article.find(params[:article_id])
     @comment = Comment.new
-    @comments = @article.comments.includes(:user)
+    @comments = @article.comments.all
   end
 
   def create
