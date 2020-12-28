@@ -6,7 +6,7 @@ class Companies::SessionsController < Devise::SessionsController
   def new_guest_company
     company = Company.login
     sign_in company
-    redirect_to root_path
+    redirect_to companies_articles_path
   end
   # GET /resource/sign_in
   # def new
