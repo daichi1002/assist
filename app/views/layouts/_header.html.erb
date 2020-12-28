@@ -48,7 +48,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><%= link_to 'ビジネスマッチング', '#' %></li>
         <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
-        <li class="nav-item"><%= link_to 'マイページ', '#' %></li>
+        <li class="nav-item"><%= link_to 'マイページ', companies_company_path(current_company.id) %></li>
         <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <li class="nav-item"><%= link_to 'お問い合わせ', new_contacts_path %></li>
       </ul>
