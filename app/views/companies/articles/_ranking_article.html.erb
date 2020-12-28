@@ -1,0 +1,37 @@
+<%# 管理者がログインしているとき%>
+<% if user_signed_in? && current_user.admin?%>
+  <% @ranks.each.with_index(1) do |article, i| %>
+    <div class="card-group col-md-6 col-lg-3">
+      <span class="article-info"><i class="fas fa-crown"></i> 第<%= i %>位</span>
+      <%= link_to admin_article_path(article.id), class: "article-link" do%>
+        <span class="article-info"><%= article.genre.name %></span>
+      <div class="card articles-chart">
+        <%= image_tag article.image, class:"card-img-top" if article.image.attached? %> 
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h4>
+            <p class="card-text"><%= article.information.truncate(30) %></p>
+            <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= article.likes.count %></span></p>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+<%# 管理者以外の閲覧者の場合 %>
+<% else %>
+  <% @ranks.each.with_index(1) do |article, i| %>
+    <div class="card-group col-md-6 col-lg-3">
+      <span class="article-info"><i class="fas fa-crown"></i> 第<%= i %>位</span>
+      <%= link_to article_path(article.id), class: "article-link" do%>
+        <span class="article-info"><%= article.genre.name %></span>
+      <div class="card articles-chart">
+        <%= image_tag article.image, class:"card-img-top" if article.image.attached? %> 
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h4>
+            <p class="card-text"><%= article.information.truncate(30) %></p>
+            <p class="like-button"><i class="far fa-heart fa-2x" style="color: #e82a2a;"></i><span style="color: #e82a2a"><%= article.likes.count %></span></p>
+          </div>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
