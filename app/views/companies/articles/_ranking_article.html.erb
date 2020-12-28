@@ -21,7 +21,7 @@
   <% @ranks.each.with_index(1) do |article, i| %>
     <div class="card-group col-md-6 col-lg-3">
       <span class="article-info"><i class="fas fa-crown"></i> 第<%= i %>位</span>
-      <%= link_to article_path(article.id), class: "article-link" do%>
+      <%= link_to companies_article_path(article.id), class: "article-link" do%>
         <span class="article-info"><%= article.genre.name %></span>
       <div class="card articles-chart">
         <%= image_tag article.image, class:"card-img-top" if article.image.attached? %> 
