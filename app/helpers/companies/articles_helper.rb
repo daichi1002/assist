@@ -1,0 +1,2 @@
+module Companies::ArticlesHelper
+end
