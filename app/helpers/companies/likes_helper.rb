@@ -1,0 +1,2 @@
+module Companies::LikesHelper
+end

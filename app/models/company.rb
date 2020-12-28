@@ -1,4 +1,11 @@
 class Company < ApplicationRecord
+  has_many :likes
+  has_many :liked_articles, through: :likes, source: :article
+  has_many :comments, dependent: :destroy
+
+  def liked_by?(article_id)
+    likes.where(article_id: article_id).exists?
+  end
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

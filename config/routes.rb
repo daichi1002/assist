@@ -8,7 +8,17 @@ Rails.application.routes.draw do
   devise_scope :company do
     post 'companies/guest_sign_in', to: 'companies/sessions#new_guest_company'
   end
+
+  namespace :companies do
+    resources :companies, only: [:show]
+    post 'like/:id', to: 'likes#create', as: 'create_like'
+    delete 'like/:id', to: 'likes#destroy', as: 'destroy_like'
+    resources :articles, only: [:index, :show] do
+      resources :comments, only: [:new, :create]
+    end
+  end
   
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',

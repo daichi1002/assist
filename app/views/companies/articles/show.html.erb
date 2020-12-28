@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5 class='form-header-text text-center'>
+        <i class="fas fa-folder-open fa-lg my-orange"></i>　<%= @article.title %>
+      </h5>
+      <div class="table-responsive-lg text-center">
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td class="align-middle w-25">対象地域</th>
+              <td class="align-middle"><%= @article.area.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">種類</th>
+              <td class="align-middle"><%= @article.type.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">ジャンル</th>
+              <td class="align-middle"><%= @article.genre.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">上限金額</th>
+              <td class="align-middle"><%= @article.maximum_price %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">取扱開始日</th>
+              <td class="align-middle"><%= @article.start_date %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">取扱終了日</th>
+              <td class="align-middle"><%= @article.end_date %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">詳細</th>
+              <td class="align-middle"><%= @article.information %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">URL</th>
+              <td class="align-middle"><a href="<%=@article.url %>"><%= @article.url %></a></td>
+            </tr>
+          </tbody>
+        </table>
+          <% if company_signed_in? %>
+            <%= render partial: "companies/likes/like", locals: { article:@article } %>
+            <%= link_to new_companies_article_comment_path(@article.id) do %>
+              <p class="comment-btn"><i class="fas fa-comments fa-2x my-orange"></i></p>
+            <% end %>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-show-count="false"><i class="fab fa-twitter-square fa-2x"></i></a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <% end %>
+      </div>
+          <%= render "layouts/map" %>
+    </div>
+  </div>
+</div>

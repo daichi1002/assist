@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Companies::CommentsController < ApplicationController
   def new
     @article = Article.find(params[:article_id])
     @comment = Comment.new
@@ -17,6 +17,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:text).merge(user_id: current_user.id, article_id: params[:article_id])
+    params.require(:comment).permit(:text).merge(company_id: current_company.id, article_id: params[:article_id])
   end
 end
