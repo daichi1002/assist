@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :companies do
+    get 'companies/show'
+  end
   devise_for :companies, controllers: {
     sessions:      'companies/sessions',
     passwords:     'companies/passwords',
