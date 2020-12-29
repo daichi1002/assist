@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  namespace :companies do
-    get 'companies/show'
-  end
+#法人会員ルーティング
   devise_for :companies, controllers: {
     sessions:      'companies/sessions',
     passwords:     'companies/passwords',
@@ -21,7 +19,7 @@ Rails.application.routes.draw do
     end
   end
   
-
+#個人会員, 管理者ルーティング
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations',
@@ -41,13 +39,15 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show] do
     resources :comments, only: [:new, :create]
   end
-    namespace :admin do
-      resources :articles, only: [:new, :create, :show, :edit, :update, :destroy]
-    end
+
+  namespace :admin do
+    resources :articles, only: [:new, :create, :show, :edit, :update, :destroy]
+  end
   
   post 'like/:id', to: 'likes#create', as: 'create_like'
   delete 'like/:id', to: 'likes#destroy', as: 'destroy_like'
 
+#お問い合わせルーティング
   resource :contacts, only: [:new, :create] do
     get "/thanks", to: "contacts#thanks"
   end
