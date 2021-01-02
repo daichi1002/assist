@@ -1,0 +1,2 @@
+module Companies::MatchingsHelper
+end
