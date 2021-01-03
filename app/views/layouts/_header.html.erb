@@ -32,6 +32,7 @@
         <li class="nav-item login-user">ようこそ、<%= current_user.last_name %>さん！</li>
       </ul>
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><%= link_to 'ビジネスマッチング', matchings_path %></li>
         <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
         <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id) %></li>
         <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -46,7 +47,7 @@
         <li class="nav-item login-user">ようこそ、<%= current_company.company_name %> ご担当者様</li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><%= link_to 'ビジネスマッチング', '#' %></li>
+        <li class="nav-item"><%= link_to 'ビジネスマッチング', companies_matchings_path %></li>
         <li class="nav-item"><%= link_to '記事一覧', root_path %></li>
         <li class="nav-item"><%= link_to 'マイページ', companies_company_path(current_company.id) %></li>
         <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
