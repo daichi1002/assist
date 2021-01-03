@@ -17,4 +17,10 @@ class Companies::MatchingsController < ApplicationController
       render :new
     end
   end
+
+  private
+
+  def matching_params
+    params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(company_id: current_company.id)
+  end
 end

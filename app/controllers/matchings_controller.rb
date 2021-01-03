@@ -17,4 +17,10 @@ class MatchingsController < ApplicationController
       render :new
     end
   end
+
+  private
+
+  def matching_params
+    params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(user_id: current_user.id)
+  end
 end
