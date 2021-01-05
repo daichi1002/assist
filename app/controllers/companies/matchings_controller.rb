@@ -20,6 +20,7 @@ class Companies::MatchingsController < ApplicationController
 
   def show
     @matching = Matching.find(params[:id])
+    @need = Need.find_by_id @matching.need_id
   end
 
   private
