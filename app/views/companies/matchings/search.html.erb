@@ -1,0 +1,27 @@
+<div class="container">
+  <h5 class="article-title"><i class="fas fa-poll-h fa-2x my-orange"></i>　検索結果一覧</h5>
+    <div class="row">
+      <div class="col-md-12">
+        <% if @results.length !=0 %>
+          <% @results.each do |result| %>
+            <%= link_to matching_path(result.id), class:"article-link" do %>
+            <div class="card needs w-100">
+              <div class="card-body">
+                <h5 class="card-title"><%= result.title %></h5>
+                <p class="card-text"><%= result.detail.truncate(30) %></p>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <h5 class="alert">該当する投稿はありません！</h5>
+        <% end %>
+      </div>
+    </div>
+</div>
+<div class="container text-center">
+  <p class="paginate">
+    <%= paginate @results %>
+    <%= link_to 'トップページへ戻る', companies_matchings_path %>
+  </p>
+</div>

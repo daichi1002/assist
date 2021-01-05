@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :articles, only: [:index, :show] do
       resources :comments, only: [:new, :create]
     end
+    get 'matchings/search'
     resources :matchings
   end
   
@@ -48,6 +49,7 @@ Rails.application.routes.draw do
   post 'like/:id', to: 'likes#create', as: 'create_like'
   delete 'like/:id', to: 'likes#destroy', as: 'destroy_like'
 
+  get 'matchings/search'
   resources :matchings
 
 #お問い合わせルーティング
