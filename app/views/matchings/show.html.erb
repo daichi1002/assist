@@ -29,6 +29,10 @@
             </tr>
           </tbody>
         </table>
+        <% if user_signed_in? && current_user.id == @matching.user_id %>
+        <%= link_to '編集', edit_matching_path, method: :get, class: "btn btn-outline-success w-25 admin-btn" %>
+        <%= link_to '削除', matching_path, method: :delete, class: "btn btn-outline-info w-25 admin-btn" %>
+        <% end %>
       </div>
     </div>
   </div>

@@ -29,6 +29,10 @@
             </tr>
           </tbody>
         </table>
+        <% if company_signed_in? && current_company.id == @matching.company_id %>
+        <%= link_to '編集', edit_companies_matching_path, method: :get, class: "btn btn-outline-success w-25 admin-btn" %>
+        <%= link_to '削除', companies_matching_path, method: :delete, class: "btn btn-outline-info w-25 admin-btn" %>
+        <% end %>
       </div>
     </div>
   </div>
