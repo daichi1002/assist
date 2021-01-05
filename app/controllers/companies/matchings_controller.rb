@@ -29,8 +29,8 @@ class Companies::MatchingsController < ApplicationController
   end
 
   def update
-    if @matching.update(matching_params)
-      redirect_to companies_matching_path(matching.id)
+    if @matching.update(params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(company_id: current_company.id))
+      redirect_to companies_matching_path(@matching.id)
     else
       render :edit
     end

@@ -28,8 +28,8 @@ class MatchingsController < ApplicationController
   end
 
   def update
-    if @matching.update(matching_params)
-      redirect_to matching_path(matching.id)
+    if @matching.update(params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(user_id: current_user.id))
+      redirect_to matching_path(@matching.id)
     else
       render :edit
     end
