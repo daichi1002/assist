@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5 class='form-header-text text-center'>
+        <i class="fas fa-folder-open fa-lg my-orange"></i>　ビジネスマッチング
+      </h5>
+      <%= link_to 'ニーズを投稿する',  new_matching_path, class:"btn btn-outline-warning" %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%#= search_form_for @a, url: articles_search_path do |f| %>
+        <div class="search-wrapper">
+          <div class="search-content col-12">
+            <%#= f.label :need_id_eq, 'ニーズを選択', class: 'label' %>
+            <div class="radio-btn">
+              <%#= f.radio_button :need_id_eq, '', {checked: true} %>指定なし
+              <%#= f.radio_button :need_id_eq, 1 %>売りニーズ
+              <%#= f.radio_button :need_id_eq, 2 %>買いニーズ
+            </div>
+          </div>
+          <div class="search-content col-12">
+            <%#= f.label :area_id_eq, '地域を選択', class: 'label' %>
+              <%#= f.collection_select(:area_id_eq, Area.all, :id, :name, {include_blank: "---"}, {class:"search-select-box float-right"}) %>
+          </div>
+          <div class="search-content col-12">
+            <%#= f.label :title_or_detail_cont, 'キーワード検索', class: 'label' %>
+              <%#= f.search_field :title_or_detail_cont, placeholder: 'キーワードを入力', class:"search-form-control float-right" %>
+          </div>
+          <div class="search-content col-12 text-center">
+            <%#= f.submit 'この条件で検索する', class:"btn btn-outline-success search-btn" %>
+          </div>
+        </div>
+      <%# end %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-6">
+      <% @matchings.each do |matching| %>
+      <%= link_to companies_matching_path(matching.id), class:"article-link" do %>
+      <div class="card needs w-100">
+        <div class="card-body">
+          <h5 class="card-title"><%= matching.title %></h5>
+          <p class="card-text"><%= matching.detail.truncate(30) %></p>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

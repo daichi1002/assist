@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_021327) do
+ActiveRecord::Schema.define(version: 2021_01_02_060823) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -99,6 +99,21 @@ ActiveRecord::Schema.define(version: 2020_12_28_021327) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "matchings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "title", null: false
+    t.text "detail", null: false
+    t.integer "need_id", null: false
+    t.date "end_date"
+    t.string "contact_information", null: false
+    t.string "url"
+    t.bigint "user_id"
+    t.bigint "company_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_matchings_on_company_id"
+    t.index ["user_id"], name: "index_matchings_on_user_id"
+  end
+
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -136,5 +151,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_021327) do
   add_foreign_key "likes", "articles"
   add_foreign_key "likes", "companies"
   add_foreign_key "likes", "users"
+  add_foreign_key "matchings", "companies"
+  add_foreign_key "matchings", "users"
   add_foreign_key "sns_credentials", "users"
 end
