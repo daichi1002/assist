@@ -18,6 +18,11 @@ class MatchingsController < ApplicationController
     end
   end
 
+  def show
+    @matching = Matching.find(params[:id])
+    @need = Need.find_by_id @matching.need_id
+  end
+
   private
 
   def matching_params

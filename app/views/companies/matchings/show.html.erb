@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5 class='form-header-text text-center'>
+        <i class="fas fa-folder-open fa-lg my-orange"></i>　<%= @matching.title %>
+      </h5>
+      <div class="table-responsive-lg text-center">
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td class="align-middle w-25">ニーズ種類</th>
+              <td class="align-middle"><%= @need.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">詳細</th>
+              <td class="align-middle"><%= @matching.detail %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">募集期限</th>
+              <td class="align-middle"><%= @matching.end_date %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">ご連絡先</th>
+              <td class="align-middle"><%= @matching.contact_information %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">会社ホームページURL</th>
+              <td class="align-middle"><%= @matching.url %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
