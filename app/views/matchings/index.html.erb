@@ -11,35 +11,35 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <%#= search_form_for @a, url: articles_search_path do |f| %>
+      <%= search_form_for @p, url: matchings_search_path do |f| %>
         <div class="search-wrapper">
           <div class="search-content col-12">
-            <%#= f.label :need_id_eq, 'ニーズを選択', class: 'label' %>
+            <%= f.label :need_id_eq, 'ニーズを選択', class: 'label' %>
             <div class="radio-btn">
-              <%#= f.radio_button :need_id_eq, '', {checked: true} %>指定なし
-              <%#= f.radio_button :need_id_eq, 1 %>売りニーズ
-              <%#= f.radio_button :need_id_eq, 2 %>買いニーズ
+              <%= f.radio_button :need_id_eq, '', {checked: true} %>指定なし
+              <%= f.radio_button :need_id_eq, 1 %>売りニーズ
+              <%= f.radio_button :need_id_eq, 2 %>買いニーズ
             </div>
           </div>
-          <div class="search-content col-12">
+          <!--<div class="search-content col-12">
             <%#= f.label :area_id_eq, '地域を選択', class: 'label' %>
               <%#= f.collection_select(:area_id_eq, Area.all, :id, :name, {include_blank: "---"}, {class:"search-select-box float-right"}) %>
-          </div>
+          </div>-->
           <div class="search-content col-12">
-            <%#= f.label :title_or_detail_cont, 'キーワード検索', class: 'label' %>
-              <%#= f.search_field :title_or_detail_cont, placeholder: 'キーワードを入力', class:"search-form-control float-right" %>
+            <%= f.label :title_or_detail_cont, 'キーワード検索', class: 'label' %>
+              <%= f.search_field :title_or_detail_cont, placeholder: 'キーワードを入力', class:"search-form-control float-right" %>
           </div>
           <div class="search-content col-12 text-center">
-            <%#= f.submit 'この条件で検索する', class:"btn btn-outline-success search-btn" %>
+            <%= f.submit 'この条件で検索する', class:"btn btn-outline-success search-btn" %>
           </div>
         </div>
-      <%# end %>
+      <% end %>
     </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-12 col-lg-6">
+    <div class="col-md-12">
       <% @matchings.each do |matching| %>
       <%= link_to matching_path(matching.id), class:"article-link" do %>
       <div class="card needs w-100">
