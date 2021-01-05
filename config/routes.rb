@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:new, :create]
     end
     resources :matchings
+    get 'matchings/search'
   end
   
 #個人会員, 管理者ルーティング
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
   delete 'like/:id', to: 'likes#destroy', as: 'destroy_like'
 
   resources :matchings
+  get 'matchings/search'
 
 #お問い合わせルーティング
   resource :contacts, only: [:new, :create] do
