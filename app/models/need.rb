@@ -1,7 +1,7 @@
 class Need < ActiveHash::Base
   self.data = [
-    { id: 1, name:'売り'},
-    { id: 2, name:'買い'}
+    { id: 1, name:'売りたい'},
+    { id: 2, name:'買いたい'}
   ]
 
   include ActiveHash::Associations
