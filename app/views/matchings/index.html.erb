@@ -41,7 +41,7 @@
   <div class="row">
     <div class="col-md-12 col-lg-6">
       <% @matchings.each do |matching| %>
-      <%= link_to companies_matching_path(matching.id), class:"article-link" do %>
+      <%= link_to matching_path(matching.id), class:"article-link" do %>
       <div class="card needs w-100">
         <div class="card-body">
           <h5 class="card-title"><%= matching.title %></h5>
