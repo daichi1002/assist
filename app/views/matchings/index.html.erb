@@ -39,10 +39,10 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-md-12 col-lg-6">
       <% @matchings.each do |matching| %>
-      <%= link_to companies_matching_path(matching.id) do %>
-      <div class="card" style="width: 18rem;">
+      <%= link_to companies_matching_path(matching.id), class:"article-link" do %>
+      <div class="card needs w-100">
         <div class="card-body">
           <h5 class="card-title"><%= matching.title %></h5>
           <p class="card-text"><%= matching.detail.truncate(30) %></p>
