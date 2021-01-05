@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h5 class='form-header-text text-center'>
+      <h4 class='form-header-text text-center'>
         <i class="fas fa-folder-open fa-lg my-orange"></i>　ビジネスマッチング
-      </h5>
+      </h4>
       <%= link_to 'ニーズを投稿する',  new_companies_matching_path, class:"btn btn-outline-warning" %>
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="row">
-    <div class="col-12">
+  <h5 class="article-title"><i class="fas fa-search-dollar fa-lg my-orange"></i>　ニーズを探す</h5>
+    <div class="row justify-content-center">
       <%= search_form_for @p, url: companies_matchings_search_path do |f| %>
         <div class="search-wrapper">
           <div class="search-content col-12">
@@ -35,7 +35,6 @@
         </div>
       <% end %>
     </div>
-  </div>
 </div>
 <div class="container">
   <div class="row">
