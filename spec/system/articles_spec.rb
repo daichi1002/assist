@@ -45,7 +45,7 @@ RSpec.describe '記事投稿', type: :system do
       fill_in '詳細', with: @article.information
       fill_in 'URL', with: @article.url
       expect do
-        find('input[name="commit').click
+        find('input[name="commit"]').click
       end.to change { Article.count }.by(1)
       expect(current_path).to eq root_path
     end
