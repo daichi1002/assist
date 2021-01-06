@@ -9,7 +9,7 @@ class Companies::MatchingsController < ApplicationController
   end
 
   def new
-    @marching = Matching.new
+    @matching = Matching.new
   end
 
   def create
@@ -29,7 +29,7 @@ class Companies::MatchingsController < ApplicationController
   end
 
   def update
-    if @matching.update(params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(company_id: current_company.id))
+    if @matching.update(matching_params)
       redirect_to companies_matching_path(@matching.id)
     else
       render :edit
@@ -43,7 +43,7 @@ class Companies::MatchingsController < ApplicationController
   private
 
   def matching_params
-    params.permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(company_id: current_company.id)
+    params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(company_id: current_company.id)
   end
 
   def set_matching

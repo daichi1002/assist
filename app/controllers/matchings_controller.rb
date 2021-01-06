@@ -8,7 +8,7 @@ class MatchingsController < ApplicationController
   end
 
   def new
-    @marching = Matching.new
+    @matching = Matching.new
   end
 
   def create
@@ -28,7 +28,7 @@ class MatchingsController < ApplicationController
   end
 
   def update
-    if @matching.update(params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(user_id: current_user.id))
+    if @matching.update(matching_params)
       redirect_to matching_path(@matching.id)
     else
       render :edit
@@ -42,7 +42,7 @@ class MatchingsController < ApplicationController
   private
 
   def matching_params
-    params.permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(user_id: current_user.id)
+    params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(user_id: current_user.id)
   end
 
   def set_matching
