@@ -1,10 +1,10 @@
 class MatchingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_matching, only: [:show, :edit, :update]
+  before_action :set_matching, only: [:show, :edit, :update, :destroy]
   before_action :search_matching, only: [:index, :search]
 
   def index
-    @matchings = Matching.all
+    @matchings = Matching.page(params[:page]).per(10).order('created_at DESC')
   end
 
   def new
@@ -32,6 +32,14 @@ class MatchingsController < ApplicationController
       redirect_to matching_path(@matching.id)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @matching.destroy
+      redirect_to matchings_path
+    else 
+      render :show
     end
   end
 
