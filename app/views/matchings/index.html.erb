@@ -41,7 +41,7 @@
     <div class="col-md-12">
       <% @matchings.each do |matching| %>
       <%= link_to matching_path(matching.id), class:"article-link" do %>
-      <div class="card needs w-100">
+      <div class="card needs w-100 effect-fade">
         <div class="card-body">
           <h5 class="card-title"><i class="far fa-handshake"></i> <%= matching.title %></h5>
           <p class="card-text"><%= matching.detail.truncate(100) %></p>
