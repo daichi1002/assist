@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h4 class='form-header-text text-center'>
+      <h4 class='matching-header-text text-center'>
         <i class="fas fa-folder-open fa-lg my-orange"></i>　ビジネスマッチング
       </h4>
       <%= link_to 'ニーズを投稿する',  new_companies_matching_path, class:"btn btn-outline-warning" %>
@@ -43,8 +43,8 @@
       <%= link_to companies_matching_path(matching.id), class:"article-link" do %>
       <div class="card needs w-100">
         <div class="card-body">
-          <h5 class="card-title"><%= matching.title %></h5>
-          <p class="card-text"><%= matching.detail.truncate(30) %></p>
+          <h5 class="card-title"><i class="far fa-handshake"></i> <%= matching.title %></h5>
+          <p class="card-text"><%= matching.detail.truncate(100) %></p>
         </div>
       </div>
       <% end %>
