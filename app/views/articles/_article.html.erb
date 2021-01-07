@@ -1,7 +1,7 @@
 <%# 管理者がログインしているとき%>
 <% if user_signed_in? && current_user.admin?%>
   <% @articles.each do |article| %>
-    <div class="card-group col-md-6 col-lg-3">
+    <div class="card-group col-md-6 col-lg-3 effect-fade">
       <%= link_to admin_article_path(article.id), class: "article-link" do%>
         <span class="article-info"><%= article.genre.name %></span>
       <div class="card articles-chart">
@@ -18,7 +18,7 @@
 <%# 管理者以外の閲覧者の場合 %>
 <% else %>
   <% @articles.each do |article| %>
-    <div class="card-group col-md-6 col-lg-3">
+    <div class="card-group col-md-6 col-lg-3 effect-fade">
       <%= link_to article_path(article.id), class: "article-link" do%>
         <span class="article-info"><%= article.genre.name %></span>
       <div class="card articles-chart">

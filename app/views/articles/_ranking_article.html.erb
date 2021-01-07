@@ -1,7 +1,7 @@
 <%# 管理者がログインしているとき%>
 <% if user_signed_in? && current_user.admin?%>
   <% @ranks.each.with_index(1) do |article, i| %>
-    <div class="card-group col-md-6 col-lg-3">
+    <div class="card-group col-md-6 col-lg-3 effect-fade">
       <span class="article-info"><i class="fas fa-crown"></i> 第<%= i %>位</span>
       <%= link_to admin_article_path(article.id), class: "article-link" do%>
         <span class="article-info"><%= article.genre.name %></span>
@@ -19,7 +19,7 @@
 <%# 管理者以外の閲覧者の場合 %>
 <% else %>
   <% @ranks.each.with_index(1) do |article, i| %>
-    <div class="card-group col-md-6 col-lg-3">
+    <div class="card-group col-md-6 col-lg-3 effect-fade">
       <span class="article-info"><i class="fas fa-crown"></i> 第<%= i %>位</span>
       <%= link_to article_path(article.id), class: "article-link" do%>
         <span class="article-info"><%= article.genre.name %></span>
