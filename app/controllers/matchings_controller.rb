@@ -38,7 +38,7 @@ class MatchingsController < ApplicationController
   def destroy
     if @matching.destroy
       redirect_to matchings_path
-    else 
+    else
       render :show
     end
   end

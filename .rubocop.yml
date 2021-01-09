@@ -1,4 +1,5 @@
 AllCops:
+ NewCops: enable
 # 除外するディレクトリ（自動生成されたファイル）
 # デフォルト設定にある"vendor/**/*"が無効化されないように記述
  Exclude:
@@ -12,7 +13,7 @@ AllCops:
 
 # 1行あたりの文字数をチェックする
 Layout/LineLength:
- Max: 130
+ Max: 300
 # 下記ファイルはチェックの対象から外す
  Exclude:
    - "Rakefile"

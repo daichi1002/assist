@@ -3,7 +3,6 @@ class Companies::MatchingsController < ApplicationController
   before_action :set_matching, only: [:show, :edit, :update, :destroy]
   before_action :search_matching, only: [:index, :search]
 
-
   def index
     @matchings = Matching.page(params[:page]).per(10).order('created_at DESC')
   end

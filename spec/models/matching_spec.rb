@@ -23,22 +23,22 @@ RSpec.describe Matching, type: :model do
       it 'タイトル(title)が空では保存できない' do
         @matching.title = nil
         @matching.valid?
-        expect(@matching.errors.full_messages).to include("タイトルを入力してください")
+        expect(@matching.errors.full_messages).to include('タイトルを入力してください')
       end
       it '種類(need_id)が空では保存できない' do
         @matching.need_id = nil
         @matching.valid?
-        expect(@matching.errors.full_messages).to include("ニーズを入力してください")
+        expect(@matching.errors.full_messages).to include('ニーズを入力してください')
       end
       it '詳細(detail)が空では保存できない' do
         @matching.detail = nil
         @matching.valid?
-        expect(@matching.errors.full_messages).to include("詳細を入力してください")
+        expect(@matching.errors.full_messages).to include('詳細を入力してください')
       end
       it 'ご連絡先(contact_information)が空では保存できない' do
         @matching.contact_information = nil
         @matching.valid?
-        expect(@matching.errors.full_messages).to include("ご連絡先を入力してください")
+        expect(@matching.errors.full_messages).to include('ご連絡先を入力してください')
       end
     end
   end
