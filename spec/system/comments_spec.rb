@@ -17,7 +17,7 @@ RSpec.describe 'コメント投稿', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       visit article_path(@article)
-      find('#comment-btn').click
+      find('.comment-btn').click
       expect(current_path).to eq new_article_comment_path(@article)
       fill_in '内容', with: @comment
       expect do
@@ -31,7 +31,7 @@ RSpec.describe 'コメント投稿', type: :system do
     it 'ログインしていないユーザーはコメント投稿ページへ遷移できない' do
       visit root_path
       visit article_path(@article)
-      expect(page).to have_no_link('#comment-btn')
+      expect(page).to have_no_link('.comment-btn')
     end
   end
 end
