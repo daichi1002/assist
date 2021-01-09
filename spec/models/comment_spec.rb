@@ -17,11 +17,6 @@ RSpec.describe Comment, type: :model do
         @comment.valid?
         expect(@comment.errors.full_messages).to include('コメントを入力してください')
       end
-      it 'userが紐づいていなければ（ログインしていなければ）投稿できない' do
-        @comment.user = nil
-        @comment.valid?
-        expect(@comment.errors.full_messages).to include('Userを入力してください')
-      end
       it 'articleが紐づいていなければ投稿できない' do
         @comment.article = nil
         @comment.valid?
