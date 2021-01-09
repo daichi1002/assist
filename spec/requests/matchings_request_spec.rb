@@ -1,5 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe "Matchings", type: :request do
-
+RSpec.describe 'Matchings', type: :request do
 end

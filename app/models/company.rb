@@ -8,10 +8,10 @@ class Company < ApplicationRecord
   def liked_by?(article_id)
     likes.where(article_id: article_id).exists?
   end
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   validates :company_name, :company_name_kana, :email, :postal_code, :address, :phone_number, :introduction, :staff, presence: true
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
