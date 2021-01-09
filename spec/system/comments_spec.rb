@@ -17,7 +17,6 @@ RSpec.describe 'コメント投稿', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
       visit article_path(@article)
-      find('.comment-btn').click
       expect(current_path).to eq new_article_comment_path(@article)
       fill_in '内容', with: @comment
       expect do
