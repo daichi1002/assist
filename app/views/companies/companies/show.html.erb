@@ -18,3 +18,44 @@
       <% end %>
     </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h5 class="article-title"><i class="fas fa-paperclip fa-2x my-orange"></i>　会社情報</h5>
+      <div class="table-responsive-lg text-center">
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td class="align-middle w-25">会社名</th>
+              <td class="align-middle"><%= @company.company_name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">会社名（カナ）</th>
+              <td class="align-middle"><%= @company.company_name_kana %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">MAIL</th>
+              <td class="align-middle"><%= @company.email %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">郵便番号</th>
+              <td class="align-middle"><%= @company.postal_code %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">住所</th>
+              <td class="align-middle"><%= @company.address %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">電話番号</th>
+              <td class="align-middle"><%= @company.phone_number %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">企業紹介</th>
+              <td class="align-middle text-left"><%= simple_format(@company.introduction) %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
