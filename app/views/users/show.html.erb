@@ -18,3 +18,40 @@
       <% end %>
     </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h5 class="article-title"><i class="fas fa-paperclip fa-2x my-orange"></i>　ユーザー情報</h5>
+      <div class="table-responsive-lg text-center">
+        <table class="table table-bordered table-striped">
+          <tbody>
+            <tr>
+              <td class="align-middle w-25">お名前</th>
+              <td class="align-middle"><%= @user.first_name %><%= @user.last_name%></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">お名前（カナ）</th>
+              <td class="align-middle"><%= @user.first_name_kana %><%= @user.last_name_kana%></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">MAIL</th>
+              <td class="align-middle"><%= @user.email %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">都道府県</th>
+              <td class="align-middle"><%= @user.state.name %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">生年月日</th>
+              <td class="align-middle"><%= @user.birth_day %></td>
+            </tr>
+            <tr>
+              <td class="align-middle w-25">電話番号</th>
+              <td class="align-middle"><%= @user.phone_number %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
