@@ -50,7 +50,7 @@ class MatchingsController < ApplicationController
   private
 
   def matching_params
-    params.require(:matching).permit(:title, :need_id, :detail, :end_date, :contact_information, :url).merge(user_id: current_user.id)
+    params.require(:matching).permit(:title, :need_id, :area_id,  :detail, :end_date, :contact_information, :url).merge(user_id: current_user.id)
   end
 
   def set_matching
