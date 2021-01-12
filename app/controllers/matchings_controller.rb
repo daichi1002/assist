@@ -22,6 +22,7 @@ class MatchingsController < ApplicationController
 
   def show
     @need = Need.find_by_id @matching.need_id
+    @area = Area.find_by_id @matching.area_id
   end
 
   def edit
