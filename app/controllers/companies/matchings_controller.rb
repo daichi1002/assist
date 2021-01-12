@@ -50,7 +50,7 @@ class Companies::MatchingsController < ApplicationController
   private
 
   def matching_params
-    params.require(:matching).permit(:title, :need_id, :area_id,  :detail, :end_date, :contact_information, :url).merge(company_id: current_company.id)
+    params.require(:matching).permit(:title, :need_id, :area_id, :detail, :end_date, :contact_information, :url).merge(company_id: current_company.id)
   end
 
   def set_matching
