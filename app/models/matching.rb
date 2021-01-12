@@ -4,5 +4,5 @@ class Matching < ApplicationRecord
   belongs_to :company, optional: true
   belongs_to :area
 
-  validates :title, :need_id, :detail, :contact_information, presence: true
+  validates :title, :area_id, :need_id, :detail, :contact_information, presence: true
 end

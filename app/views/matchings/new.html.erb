@@ -29,6 +29,7 @@
         <div class="form-group">
           <div class='form-text-wrap'>
             <label class="form-text" for="area">募集地域</label>
+            <span class="badge badge-danger">必須</span>
           </div>
           <%= f.collection_select(:area_id, Area.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"area"}) %>
         </div>
