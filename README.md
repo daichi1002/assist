@@ -87,7 +87,7 @@ https://business-assist.work/
 
 ## ER図
 
-![assist](https://user-images.githubusercontent.com/72916511/103721332-c2a19400-5010-11eb-81e3-050629a0dc08.png)
+![image](https://user-images.githubusercontent.com/72916511/104277224-d2761800-54e9-11eb-8617-779c5cf07cce.png)
 
 
 ## インフラ構成図
