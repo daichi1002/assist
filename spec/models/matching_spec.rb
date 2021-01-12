@@ -30,6 +30,11 @@ RSpec.describe Matching, type: :model do
         @matching.valid?
         expect(@matching.errors.full_messages).to include('ニーズを入力してください')
       end
+      it '募集地域(area_id)が空では保存できない' do
+        @matching.area_id = nil
+        @matching.valid?
+        expect(@matching.errors.full_messages).to include('募集地域を入力してください')
+      end
       it '詳細(detail)が空では保存できない' do
         @matching.detail = nil
         @matching.valid?

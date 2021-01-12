@@ -21,6 +21,7 @@ RSpec.describe 'ニーズ投稿', type: :system do
       visit new_matching_path
       fill_in 'タイトル', with: @matching.title
       find('#need').find("option[value='1']").select_option
+      find('#area').find("option[value='1']").select_option
       fill_in '詳細', with: @matching.detail
       find('#matching_end_date_1i').find("option[value='2021']").select_option
       find('#matching_end_date_2i').find("option[value='10']").select_option
