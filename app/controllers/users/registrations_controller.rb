@@ -52,6 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(_resource)
     user_path(@user.id)
   end
+  
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :first_name_kana, :last_name_kana, :state_id, :phone_number, :birth_day])
