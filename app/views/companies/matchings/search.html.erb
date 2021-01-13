@@ -4,17 +4,17 @@
       <div class="col-md-12">
         <% if @results.length !=0 %>
           <% @results.each do |result| %>
-            <%= link_to matching_path(result.id), class:"article-link" do %>
+            <%= link_to companies_matching_path(result.id), class:"article-link" do %>
             <div class="card needs w-100">
               <div class="card-body">
-                <h5 class="card-title"><%= result.title %></h5>
+                <h5 class="card-title"><i class="far fa-handshake"></i> <%= result.title %></h5>
                 <p class="card-text"><%= result.detail.truncate(30) %></p>
               </div>
             </div>
             <% end %>
           <% end %>
         <% else %>
-          <h5 class="alert">該当する投稿はありません！</h5>
+          <h5 class="alert text-center">該当する投稿はありません！</h5>
         <% end %>
       </div>
     </div>
