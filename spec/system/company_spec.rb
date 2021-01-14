@@ -25,7 +25,7 @@ RSpec.describe '法人会員新規登録', type: :system do
       expect do
         find('input[name="commit"]').click
       end.to change { Company.count }.by(1)
-      expect(current_path).to eq root_path
+      expect(current_path).to eq companies_articles_path
       expect(page).to have_content('ログアウト')
       expect(page).to have_no_content('新規登録')
     end
@@ -68,7 +68,7 @@ RSpec.describe '法人会員ログイン', type: :system do
       fill_in 'メールアドレス', with: @company.email
       fill_in 'パスワード', with: @company.password
       find('input[name="commit"]').click
-      expect(current_path).to eq root_path
+      expect(current_path).to eq companies_articles_path
       expect(page).to have_content('ログアウト')
       expect(page).to have_no_content('新規登録')
     end
