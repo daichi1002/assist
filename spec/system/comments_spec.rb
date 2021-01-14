@@ -47,7 +47,7 @@ RSpec.describe 'コメント投稿', type: :system do
   end
 
   context 'コメントの投稿ができないとき' do
-    it 'ログインしていない個人ユーザーはコメントを投稿できない' do
+    it 'ログインしていないユーザー(個人・法人)はコメントを投稿できない' do
       visit root_path
       visit article_path(@article)
       expect(page).to have_no_selector('.fa-comments')
