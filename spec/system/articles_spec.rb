@@ -16,6 +16,7 @@ RSpec.describe '記事投稿', type: :system do
       admin: true
     )
     @user1 = FactoryBot.create(:user)
+    @company = FactoryBot.create(:company)
     @article = FactoryBot.build(:article)
   end
 
@@ -65,6 +66,17 @@ RSpec.describe '記事投稿', type: :system do
       fill_in 'パスワード', with: @user1.password
       find('input[name="commit"]').click
       expect(current_path).to eq root_path
+      expect(page).to have_no_content('新規投稿')
+    end
+
+    it '法人会員がログインしていると新規投稿ページに遷移できない' do
+      visit root_path
+      expect(page).to have_content('法人会員はこちら')
+      visit new_company_session_path
+      fill_in 'メールアドレス', with: @company.email
+      fill_in 'パスワード', with: @company.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq companies_articles_path
       expect(page).to have_no_content('新規投稿')
     end
   end
