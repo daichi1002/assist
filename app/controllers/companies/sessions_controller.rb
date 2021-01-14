@@ -9,7 +9,7 @@ class Companies::SessionsController < Devise::SessionsController
     redirect_to companies_articles_path
   end
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     companies_articles_path
   end
   # GET /resource/sign_in
