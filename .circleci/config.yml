@@ -65,14 +65,14 @@ jobs:
 
 workflows:
   version: 2
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-      - deploy:
-          requires:
-            - test
-          filters:
-            branches:
-              only: master
+      jobs:
+        - build
+        - test:
+            requires:
+              - build
+        - deploy:
+            requires:
+              - test
+            filters:
+              branches:
+                only: master
