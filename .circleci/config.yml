@@ -62,17 +62,3 @@ jobs:
       - deploy:
           name: Capistrano deploy
           command: bundle exec cap production deploy
-
-workflows:
-  version: 2
-  jobs:
-    - build
-    - test:
-        requires:
-          - build
-    - deploy:
-        requires:
-          - test
-        filters:
-          branches:
-            only: master
