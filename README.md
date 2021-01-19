@@ -91,7 +91,7 @@ https://business-assist.work/
 
 ## インフラ構成図
 
-![Untitled Diagram (4)](https://user-images.githubusercontent.com/72916511/102346410-215f8900-3fe2-11eb-8fe4-ab9ffaf69bb2.png)
+![Untitled Diagram](https://user-images.githubusercontent.com/72916511/104987277-ac57f700-5a58-11eb-91c6-0709e49d9027.png)
 
 
 ## 環境・使用技術
