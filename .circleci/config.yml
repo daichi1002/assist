@@ -1,6 +1,21 @@
 version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.0
+  node: circleci/node@2
+  
 jobs:
   build:
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+        environment:
+          - BUNDLER_VERSION: 2.2.2
+    steps:
+      - checkout
+      - ruby/install-deps
+
+  test:
+    parallelism: 3
     docker:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
@@ -17,19 +32,7 @@ jobs:
     working_directory: ~/assist
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            - v1-dependencies-
-      - run:
-          name: install dependencies
-          command: |
-            gem install bundler -v 2.2.2
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
-      - save_cache:
-          paths:
-          - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      - ruby/install-deps
       - run: mv config/database.yml.ci config/database.yml
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
@@ -38,27 +41,43 @@ jobs:
          command: yarn install
       - run: bundle exec bin/webpack
       - run:
-          name: RuboCop
-          command: bundle exec rubocop
+         name: Rspec
+         command: bundle exec rspec
       - run:
-          name: RSpec
-          command: |
-            mkdir /tmp/test-results
-            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
-              circleci tests split --split-by=timings)"
-            bundle exec rspec \
-              --format progress \
-              --out /tmp/test-results/rspec.xml \
-              --format progress \
-              $TEST_FILES
+         name: Rubocop
+         command: bundle exec rubocop
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-      - add_ssh_keys:
+        
+  deploy:
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+        environment:
+          - BUNDLER_VERSION: 2.2.2
+    steps:
+       - checkout
+       - ruby/install-deps
+       - add_ssh_keys:
           fingerprints:
             - "f3:50:6f:61:b7:7b:10:8d:7d:cb:06:84:d0:6b:a0:4b"
-      - deploy:
+       - deploy:
           name: Capistrano deploy
           command: bundle exec cap production deploy
+
+workflows:
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
